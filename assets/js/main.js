@@ -36,7 +36,6 @@ function initTheme() {
 
 function updateThemeButton(btn, theme) {
   if (btn) {
-    btn.textContent = theme === 'light' ? '☾' : '☼';
     btn.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`);
   }
 }
@@ -83,11 +82,35 @@ function initMobileNav() {
   const nav = document.querySelector('.nav-links');
   
   if (toggle && nav) {
-    toggle.addEventListener('click', () => {
+    const toggleMenu = () => {
       nav.classList.toggle('active');
       const isExpanded = nav.classList.contains('active');
       toggle.setAttribute('aria-expanded', isExpanded);
-      toggle.textContent = isExpanded ? '✕' : '☰';
+      
+      if (isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+      
+      const iconMenu = toggle.querySelector('.icon-menu');
+      const iconClose = toggle.querySelector('.icon-close');
+      if (iconMenu && iconClose) {
+        iconMenu.style.display = isExpanded ? 'none' : 'block';
+        iconClose.style.display = isExpanded ? 'block' : 'none';
+      }
+    };
+
+    toggle.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking a link
+    const links = nav.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
     });
   }
 }
@@ -198,7 +221,7 @@ function renderProjectDetail() {
     return;
   }
   
-  document.title = `${project.title} | Mariella Brown`;
+  document.title = `${project.title} | Mariela Brown`;
   
   const toolsHtml = project.tools.map(t => `<span class="tag">${t}</span>`).join('');
   

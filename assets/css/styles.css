@@ -148,6 +148,12 @@ a:hover { opacity: 0.7; }
   font-weight: 500;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
 .controls {
   display: flex;
   gap: var(--space-sm);
@@ -159,11 +165,16 @@ a:hover { opacity: 0.7; }
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 0 10px;
   font-size: 0.75rem;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
   transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  min-width: 32px;
 }
 
 .control-btn:hover {
@@ -174,11 +185,27 @@ a:hover { opacity: 0.7; }
 .mobile-toggle {
   display: none;
   background: none;
-  border: none;
+  border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 1.5rem;
   cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  transition: all var(--transition-fast);
 }
+
+.mobile-toggle:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+[data-theme="dark"] .icon-moon { display: none !important; }
+[data-theme="dark"] .icon-sun { display: block !important; }
+[data-theme="light"] .icon-moon { display: block !important; }
+[data-theme="light"] .icon-sun { display: none !important; }
 
 /* Hero Section */
 .hero {
@@ -384,17 +411,28 @@ textarea.form-input {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 80px;
+    top: 100%;
     left: 0;
     right: 0;
+    height: calc(100vh - 80px);
     background: var(--bg-color);
     flex-direction: column;
-    padding: var(--space-md);
-    border-bottom: 1px solid var(--border-color);
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--space-2xl) var(--space-md);
+    z-index: 90;
+    border-bottom: none;
+    overflow-y: auto;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
   
   .nav-links.active {
@@ -402,7 +440,7 @@ textarea.form-input {
   }
   
   .mobile-toggle {
-    display: block;
+    display: inline-flex;
   }
   
   .hero {
