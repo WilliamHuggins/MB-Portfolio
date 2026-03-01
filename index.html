@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariella Brown | Design Portfolio</title>
+  <meta name="description" content="Premium design portfolio of Mariella Brown.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="/" class="brand">MB.</a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/bio/" data-i18n="nav.bio">Bio</a>
+        <a href="/gallery/" data-i18n="nav.gallery">Gallery</a>
+        <a href="/contact/" data-i18n="nav.contact">Contact</a>
+        <a href="/styleguide/" style="opacity: 0.5;">Style Guide</a>
+      </nav>
+      <div class="controls">
+        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">ES</button>
+        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container fade-in">
+      <span class="hero-subtitle" data-i18n="hero.subtitle">Design Portfolio</span>
+      <h1>Mariella Brown</h1>
+      <div class="accent-line"></div>
+      <div class="hero-actions">
+        <a href="/gallery/" class="btn btn-primary" data-i18n="hero.cta.gallery">View Gallery</a>
+        <a href="/contact/" class="btn btn-ghost" data-i18n="hero.cta.contact">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="copyright" data-i18n="footer.copyright">© 2026 Mariella Brown. All rights reserved.</div>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

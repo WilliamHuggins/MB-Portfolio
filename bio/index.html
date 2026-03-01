@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio | Mariella Brown</title>
+  <meta name="description" content="Biography of Mariella Brown.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.com/bio/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="/" class="brand">MB.</a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/bio/" data-i18n="nav.bio">Bio</a>
+        <a href="/gallery/" data-i18n="nav.gallery">Gallery</a>
+        <a href="/contact/" data-i18n="nav.contact">Contact</a>
+        <a href="/styleguide/" style="opacity: 0.5;">Style Guide</a>
+      </nav>
+      <div class="controls">
+        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">ES</button>
+        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section" style="padding-top: 160px; min-height: 80vh;">
+    <div class="fade-in">
+      <h1 data-i18n="bio.title">Biography</h1>
+      <div class="accent-line" style="margin-bottom: var(--space-lg);"></div>
+      
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-xl);">
+        <div>
+          <div style="aspect-ratio: 3/4; background: var(--border-color); border-radius: var(--radius-md);"></div>
+        </div>
+        <div>
+          <h2 style="font-family: var(--font-sans); font-size: 1.5rem; margin-bottom: var(--space-md);">Mariella Brown</h2>
+          <p data-i18n="bio.placeholder" style="color: var(--text-secondary); font-size: 1.125rem; line-height: 1.8;">
+            Biography content will be placed here. This is a structural placeholder for the editorial layout.
+          </p>
+          <div style="height: 100px; background: var(--border-color); opacity: 0.2; margin-top: var(--space-md); border-radius: var(--radius-sm);"></div>
+          <div style="height: 60px; background: var(--border-color); opacity: 0.2; margin-top: var(--space-sm); border-radius: var(--radius-sm);"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="copyright" data-i18n="footer.copyright">© 2026 Mariella Brown. All rights reserved.</div>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

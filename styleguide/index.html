@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Guide | Mariella Brown</title>
+  <meta name="description" content="Style Guide for Mariella Brown Design Portfolio.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="/" class="brand">MB.</a>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav-links">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/bio/" data-i18n="nav.bio">Bio</a>
+        <a href="/gallery/" data-i18n="nav.gallery">Gallery</a>
+        <a href="/contact/" data-i18n="nav.contact">Contact</a>
+        <a href="/styleguide/" style="opacity: 0.5;">Style Guide</a>
+      </nav>
+      <div class="controls">
+        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">ES</button>
+        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section" style="padding-top: 160px;">
+    <div class="fade-in">
+      <h1 data-i18n="styleguide.title">Style Guide</h1>
+      <p data-i18n="styleguide.subtitle" style="color: var(--text-secondary); font-size: 1.25rem;">Design system and component library.</p>
+      <div class="accent-line" style="margin-bottom: var(--space-xl);"></div>
+
+      <section class="sg-section">
+        <h2>Colors</h2>
+        <div class="sg-grid">
+          <div>
+            <div class="sg-color-swatch" style="background: var(--bg-color);"></div>
+            <p><strong>Background</strong><br><small>var(--bg-color)</small></p>
+          </div>
+          <div>
+            <div class="sg-color-swatch" style="background: var(--text-primary);"></div>
+            <p><strong>Text Primary</strong><br><small>var(--text-primary)</small></p>
+          </div>
+          <div>
+            <div class="sg-color-swatch" style="background: var(--text-secondary);"></div>
+            <p><strong>Text Secondary</strong><br><small>var(--text-secondary)</small></p>
+          </div>
+          <div>
+            <div class="sg-color-swatch" style="background: var(--border-color);"></div>
+            <p><strong>Border</strong><br><small>var(--border-color)</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-section">
+        <h2>Typography</h2>
+        <div style="margin-bottom: var(--space-md);">
+          <h1 style="margin: 0;">Heading 1 (Playfair Display)</h1>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">clamp(3rem, 8vw, 6rem)</p>
+          
+          <h2 style="margin: 0;">Heading 2</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">clamp(2rem, 5vw, 4rem)</p>
+          
+          <h3 style="margin: 0;">Heading 3</h3>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-sm);">clamp(1.5rem, 3vw, 2.5rem)</p>
+          
+          <p style="font-family: var(--font-sans); font-size: 1rem; margin-top: var(--space-md);"><strong>Body Text (Inter)</strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </section>
+
+      <section class="sg-section">
+        <h2>Buttons</h2>
+        <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; margin-bottom: var(--space-md);">
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-ghost">Ghost Button</button>
+          <button class="control-btn">Control</button>
+        </div>
+      </section>
+
+      <section class="sg-section">
+        <h2>Forms</h2>
+        <div style="max-width: 400px;">
+          <div class="form-group">
+            <label class="form-label">Input Field</label>
+            <input type="text" class="form-input" placeholder="Placeholder text" />
+          </div>
+        </div>
+      </section>
+
+      <section class="sg-section">
+        <h2>Gallery Card</h2>
+        <div style="max-width: 300px;">
+          <article class="gallery-item">
+            <div class="gallery-img-wrap">
+              <img src="https://picsum.photos/seed/styleguide/600/800" alt="Styleguide Image" loading="lazy" />
+            </div>
+            <div class="gallery-meta">
+              <h3 class="gallery-title">Project Title</h3>
+              <span class="gallery-role">Art Direction &mdash; 2026</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="copyright" data-i18n="footer.copyright">© 2026 Mariella Brown. All rights reserved.</div>
+      <div class="social-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

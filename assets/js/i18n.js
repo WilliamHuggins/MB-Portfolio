@@ -1,0 +1,50 @@
+const translations = {
+  en: {
+    "nav.home": "Home",
+    "nav.bio": "Bio",
+    "nav.gallery": "Gallery",
+    "nav.contact": "Contact",
+    "hero.subtitle": "Design Portfolio",
+    "hero.cta.gallery": "View Gallery",
+    "hero.cta.contact": "Get in Touch",
+    "footer.copyright": "© 2026 Mariella Brown. All rights reserved.",
+    "bio.title": "Biography",
+    "bio.placeholder": "Biography content will be placed here. This is a structural placeholder for the editorial layout.",
+    "gallery.title": "Selected Works",
+    "gallery.filter.all": "All",
+    "gallery.empty": "No projects found.",
+    "contact.title": "Contact",
+    "contact.subtitle": "Let's create something beautiful together.",
+    "contact.form.name": "Name",
+    "contact.form.email": "Email",
+    "contact.form.message": "Message",
+    "contact.form.submit": "Send Message",
+    "styleguide.title": "Style Guide",
+    "styleguide.subtitle": "Design system and component library."
+  },
+  es: {
+    "nav.home": "Inicio",
+    "nav.bio": "Biografía",
+    "nav.gallery": "Galería",
+    "nav.contact": "Contacto",
+    "hero.subtitle": "Portafolio de Diseño",
+    "hero.cta.gallery": "Ver Galería",
+    "hero.cta.contact": "Ponerse en Contacto",
+    "footer.copyright": "© 2026 Mariella Brown. Todos los derechos reservados.",
+    "bio.title": "Biografía",
+    "bio.placeholder": "El contenido de la biografía se colocará aquí. Este es un marcador de posición estructural para el diseño editorial.",
+    "gallery.title": "Obras Seleccionadas",
+    "gallery.filter.all": "Todos",
+    "gallery.empty": "No se encontraron proyectos.",
+    "contact.title": "Contacto",
+    "contact.subtitle": "Creemos algo hermoso juntos.",
+    "contact.form.name": "Nombre",
+    "contact.form.email": "Correo Electrónico",
+    "contact.form.message": "Mensaje",
+    "contact.form.submit": "Enviar Mensaje",
+    "styleguide.title": "Guía de Estilo",
+    "styleguide.subtitle": "Sistema de diseño y biblioteca de componentes."
+  }
+};
+
+window.translations = translations;
