@@ -12,6 +12,15 @@ const translations = {
     "bio.placeholder": "Biography content will be placed here. This is a structural placeholder for the editorial layout.",
     "gallery.title": "Selected Works",
     "gallery.filter.all": "All",
+    "gallery.filter.web": "Web Design",
+    "gallery.filter.branding": "Branding",
+    "gallery.filter.editorial": "Editorial",
+    "gallery.filter.spatial": "Spatial",
+    "gallery.sort.label": "Sort by:",
+    "gallery.sort.yearDesc": "Year (Newest)",
+    "gallery.sort.yearAsc": "Year (Oldest)",
+    "gallery.sort.titleAsc": "Title (A-Z)",
+    "gallery.sort.titleDesc": "Title (Z-A)",
     "gallery.empty": "No projects found.",
     "contact.title": "Contact",
     "contact.subtitle": "Let's create something beautiful together.",
@@ -20,7 +29,12 @@ const translations = {
     "contact.form.message": "Message",
     "contact.form.submit": "Send Message",
     "styleguide.title": "Style Guide",
-    "styleguide.subtitle": "Design system and component library."
+    "styleguide.subtitle": "Design system and component library.",
+    "project.back": "← Back to Gallery",
+    "project.role": "Role",
+    "project.year": "Year",
+    "project.tools": "Tools",
+    "project.notfound": "Project not found."
   },
   es: {
     "nav.home": "Inicio",
@@ -35,6 +49,15 @@ const translations = {
     "bio.placeholder": "El contenido de la biografía se colocará aquí. Este es un marcador de posición estructural para el diseño editorial.",
     "gallery.title": "Obras Seleccionadas",
     "gallery.filter.all": "Todos",
+    "gallery.filter.web": "Diseño Web",
+    "gallery.filter.branding": "Branding",
+    "gallery.filter.editorial": "Editorial",
+    "gallery.filter.spatial": "Espacial",
+    "gallery.sort.label": "Ordenar por:",
+    "gallery.sort.yearDesc": "Año (Más reciente)",
+    "gallery.sort.yearAsc": "Año (Más antiguo)",
+    "gallery.sort.titleAsc": "Título (A-Z)",
+    "gallery.sort.titleDesc": "Título (Z-A)",
     "gallery.empty": "No se encontraron proyectos.",
     "contact.title": "Contacto",
     "contact.subtitle": "Creemos algo hermoso juntos.",
@@ -43,7 +66,12 @@ const translations = {
     "contact.form.message": "Mensaje",
     "contact.form.submit": "Enviar Mensaje",
     "styleguide.title": "Guía de Estilo",
-    "styleguide.subtitle": "Sistema de diseño y biblioteca de componentes."
+    "styleguide.subtitle": "Sistema de diseño y biblioteca de componentes.",
+    "project.back": "← Volver a la Galería",
+    "project.role": "Rol",
+    "project.year": "Año",
+    "project.tools": "Herramientas",
+    "project.notfound": "Proyecto no encontrado."
   }
 };
 

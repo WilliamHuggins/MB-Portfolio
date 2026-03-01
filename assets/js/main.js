@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Page specific initializations
   if (document.getElementById('gallery-grid')) {
-    renderGallery();
+    initGallery();
+  }
+  
+  if (document.getElementById('project-detail')) {
+    renderProjectDetail();
   }
 });
 
@@ -64,6 +68,8 @@ function setLanguage(lang) {
     if (window.translations && window.translations[lang] && window.translations[lang][key]) {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = window.translations[lang][key];
+      } else if (el.tagName === 'OPTION') {
+        el.textContent = window.translations[lang][key];
       } else {
         el.textContent = window.translations[lang][key];
       }
@@ -108,18 +114,58 @@ function initIntersectionObserver() {
   });
 }
 
-// Gallery Rendering
+// Gallery Logic
+let currentFilter = 'all';
+let currentSort = 'year-desc';
+
+function initGallery() {
+  const filterBtns = document.querySelectorAll('.gallery-filters .control-btn');
+  const sortSelect = document.getElementById('sort-select');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      currentFilter = e.target.getAttribute('data-filter');
+      renderGallery();
+    });
+  });
+  
+  if (sortSelect) {
+    sortSelect.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      renderGallery();
+    });
+  }
+  
+  renderGallery();
+}
+
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
   if (!grid || !window.galleryData) return;
   
-  if (window.galleryData.length === 0) {
+  let filteredData = window.galleryData;
+  
+  if (currentFilter !== 'all') {
+    filteredData = filteredData.filter(item => item.tags.includes(currentFilter));
+  }
+  
+  filteredData.sort((a, b) => {
+    if (currentSort === 'year-desc') return parseInt(b.year) - parseInt(a.year);
+    if (currentSort === 'year-asc') return parseInt(a.year) - parseInt(b.year);
+    if (currentSort === 'title-asc') return a.title.localeCompare(b.title);
+    if (currentSort === 'title-desc') return b.title.localeCompare(a.title);
+    return 0;
+  });
+  
+  if (filteredData.length === 0) {
     grid.innerHTML = `<p data-i18n="gallery.empty">${window.translations[localStorage.getItem('lang') || 'en']['gallery.empty']}</p>`;
     return;
   }
 
-  const html = window.galleryData.map(item => `
-    <article class="gallery-item fade-in">
+  const html = filteredData.map(item => `
+    <a href="/project/?id=${item.id}" class="gallery-item fade-in" style="text-decoration: none; color: inherit;">
       <div class="gallery-img-wrap">
         <img src="${item.image}" alt="${item.title}" loading="lazy" />
       </div>
@@ -127,11 +173,62 @@ function renderGallery() {
         <h3 class="gallery-title">${item.title}</h3>
         <span class="gallery-role">${item.role} &mdash; ${item.year}</span>
       </div>
-    </article>
+    </a>
   `).join('');
   
   grid.innerHTML = html;
   
   // Re-init observer for new elements
+  initIntersectionObserver();
+}
+
+// Project Detail Logic
+function renderProjectDetail() {
+  const container = document.getElementById('project-detail');
+  if (!container || !window.galleryData) return;
+  
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id'));
+  
+  const project = window.galleryData.find(p => p.id === id);
+  const lang = localStorage.getItem('lang') || 'en';
+  
+  if (!project) {
+    container.innerHTML = `<h1>${window.translations[lang]['project.notfound']}</h1>`;
+    return;
+  }
+  
+  document.title = `${project.title} | Mariella Brown`;
+  
+  const toolsHtml = project.tools.map(t => `<span class="tag">${t}</span>`).join('');
+  
+  container.innerHTML = `
+    <div class="project-header fade-in">
+      <h1 class="project-title">${project.title}</h1>
+      <div class="project-meta-grid">
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="project.role">${window.translations[lang]['project.role']}</span>
+          <span class="meta-value">${project.role}</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="project.year">${window.translations[lang]['project.year']}</span>
+          <span class="meta-value">${project.year}</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label" data-i18n="project.tools">${window.translations[lang]['project.tools']}</span>
+          <div class="tags-container">${toolsHtml}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-hero-image fade-in">
+      <img src="${project.image.replace('600/800', '1200/800')}" alt="${project.title}" />
+    </div>
+    
+    <div class="project-description fade-in">
+      <p>${project.description}</p>
+    </div>
+  `;
+  
   initIntersectionObserver();
 }

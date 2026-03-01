@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Mariella Brown</title>
-  <meta name="description" content="Selected works by Mariella Brown.">
+  <title>Project | Mariella Brown</title>
+  <meta name="description" content="Project details.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://example.com/gallery/">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,36 +32,11 @@
     </div>
   </header>
 
-  <main class="container section" style="padding-top: 160px; min-height: 80vh;">
+  <main class="container section" style="padding-top: 120px; min-height: 80vh;">
     <div class="fade-in">
-      <div class="gallery-header">
-        <div>
-          <h1 data-i18n="gallery.title">Selected Works</h1>
-          <div class="accent-line"></div>
-        </div>
-        
-        <div class="gallery-controls">
-          <div class="gallery-filters" id="gallery-filters">
-            <button class="control-btn active" data-filter="all" data-i18n="gallery.filter.all">All</button>
-            <button class="control-btn" data-filter="web design" data-i18n="gallery.filter.web">Web Design</button>
-            <button class="control-btn" data-filter="branding" data-i18n="gallery.filter.branding">Branding</button>
-            <button class="control-btn" data-filter="editorial" data-i18n="gallery.filter.editorial">Editorial</button>
-            <button class="control-btn" data-filter="spatial" data-i18n="gallery.filter.spatial">Spatial</button>
-          </div>
-          
-          <div class="gallery-sort">
-            <label for="sort-select" class="sr-only" data-i18n="gallery.sort.label">Sort by:</label>
-            <select id="sort-select" class="form-input sort-select">
-              <option value="year-desc" data-i18n="gallery.sort.yearDesc">Year (Newest)</option>
-              <option value="year-asc" data-i18n="gallery.sort.yearAsc">Year (Oldest)</option>
-              <option value="title-asc" data-i18n="gallery.sort.titleAsc">Title (A-Z)</option>
-              <option value="title-desc" data-i18n="gallery.sort.titleDesc">Title (Z-A)</option>
-            </select>
-          </div>
-        </div>
-      </div>
+      <a href="/gallery/" class="back-link" data-i18n="project.back">← Back to Gallery</a>
       
-      <div id="gallery-grid" class="gallery-grid">
+      <div id="project-detail" class="project-detail mt-lg">
         <!-- Populated by JS -->
       </div>
     </div>
