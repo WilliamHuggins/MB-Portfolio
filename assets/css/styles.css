@@ -1194,15 +1194,13 @@ body.nav-open .menu-toggle i:last-child { transform: rotate(-45deg); }
 
 @keyframes cardIn { to { opacity: 1; transform: none; } }
 
+/* Landscape by default: renderings, plans and elevations are wider than tall. */
 .work-card__media {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   background: var(--bg-lift);
 }
-
-.work-card:nth-child(6n + 1) .work-card__media,
-.work-card:nth-child(6n + 4) .work-card__media { aspect-ratio: 4 / 5; }
 
 .work-card__media img,
 .work-card__media .media-fill {
@@ -1234,10 +1232,8 @@ body.nav-open .menu-toggle i:last-child { transform: rotate(-45deg); }
 }
 
 .work-card__body {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  display: grid;
+  gap: 0.5rem;
   padding-top: 1.15rem;
   border-top: 1px solid var(--rule);
   margin-top: 1.15rem;
@@ -1256,8 +1252,6 @@ body.nav-open .menu-toggle i:last-child { transform: rotate(-45deg); }
   letter-spacing: var(--tracking-mid);
   text-transform: uppercase;
   color: var(--fg-faint);
-  text-align: right;
-  flex-shrink: 0;
 }
 
 .empty-state {

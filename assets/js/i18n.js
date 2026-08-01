@@ -4,6 +4,9 @@
  * Every user-visible string on the site lives here. Mark up an element with
  * `data-i18n="key"` to have its text swapped; use `data-i18n-attr="attribute"`
  * to target an attribute instead (e.g. placeholder, aria-label, content).
+ *
+ * Project copy is not here — it lives with each project in
+ * `assets/js/gallery-data.js`, bilingual in the data itself.
  */
 const translations = {
   en: {
@@ -11,7 +14,7 @@ const translations = {
 
     'nav.home': 'Home',
     'nav.work': 'Work',
-    'nav.bio': 'Atelier',
+    'nav.bio': 'Studio',
     'nav.contact': 'Contact',
     'nav.styleguide': 'Style Guide',
     'nav.menu': 'Menu',
@@ -23,71 +26,68 @@ const translations = {
     'a11y.top': 'Back to top',
 
     'loader.mark': 'Mariela Brown',
-    'loader.status': 'Curating the collection',
 
-    'hero.eyebrow': 'Designer · Art Director · Since 2014',
+    'hero.eyebrow': 'Architecture · Interiors · Urban Design',
     'hero.line1': 'Mariela',
     'hero.line2': 'Brown',
     'hero.blurb':
-      'A design practice built on restraint, craft and considered detail — identities, editorial systems and digital experiences for brands that intend to be remembered.',
-    'hero.cta.work': 'View the Collection',
-    'hero.cta.contact': 'Commission a Project',
+      'Buildings, interiors and public space — drawn by hand, built as models, and resolved in three dimensions. A practice that tests an idea in paper before it trusts it on screen.',
+    'hero.cta.work': 'View the Work',
+    'hero.cta.contact': 'Start a Project',
     'hero.scroll': 'Scroll',
-    'hero.availability': 'Accepting select commissions',
 
-    'marquee.1': 'Brand Identity',
-    'marquee.2': 'Art Direction',
-    'marquee.3': 'Editorial Design',
-    'marquee.4': 'Digital Experience',
-    'marquee.5': 'Packaging',
-    'marquee.6': 'Spatial Design',
+    'marquee.1': 'Residential',
+    'marquee.2': 'Interiors',
+    'marquee.3': 'Adaptive Reuse',
+    'marquee.4': 'Public Space',
+    'marquee.5': 'Passive Design',
+    'marquee.6': 'Physical Models',
 
     'featured.eyebrow': 'Selected Work',
-    'featured.title': 'A collection built on quiet confidence.',
+    'featured.title': 'Every project begins on paper.',
     'featured.aside':
-      'Each engagement begins with the same question: what should this brand make a person feel before they read a single word?',
+      'Sketches, watercolours and study models come first. The renderings arrive later, to confirm what the hand already worked out.',
     'featured.cta': 'See all projects',
 
     'philosophy.eyebrow': 'The Practice',
-    'philosophy.title': 'Luxury is not decoration. It is precision.',
+    'philosophy.title': 'Design the light and the section first.',
     'philosophy.body1':
-      'Mariela Brown works at the intersection of brand, editorial and interface — building visual systems that hold their composure across a business card, a storefront and a screen.',
+      'The work moves between scales — a reception desk, a dwelling, a city block — but the method holds. Understand the site and the sun, find the section that makes the space work, and let plan and elevation follow from it.',
     'philosophy.body2':
-      'The work favours generous space, exacting typography and materials that reward attention. Nothing is added that does not earn its place.',
-    'philosophy.cta': 'About Mariela',
+      'Drawing by hand keeps the thinking slow enough to be honest. Physical models catch what a screen forgives. Only then does the project move into Revit and rendering, where it has to prove itself in daylight.',
+    'philosophy.cta': 'About the studio',
 
-    'capability.1.title': 'Brand Identity',
+    'capability.1.title': 'Residential',
     'capability.1.body':
-      'Positioning, naming, marks, typographic systems and the guidelines that keep them intact for years.',
-    'capability.2.title': 'Art Direction',
+      'New dwellings, accessory units and whole-house remodels — from massing and orientation through to plans, sections and elevations.',
+    'capability.2.title': 'Interiors',
     'capability.2.body':
-      'Photography, styling and campaign direction — from mood and casting through to final grade.',
-    'capability.3.title': 'Editorial & Print',
+      'Interior architecture and millwork: space programming, circulation, finishes, custom joinery and the details that carry a room.',
+    'capability.3.title': 'Urban & Landscape',
     'capability.3.body':
-      'Books, lookbooks and magazines. Grid architecture, paper stock, finishing and press supervision.',
-    'capability.4.title': 'Digital Experience',
+      'Public space and site strategy — existing-conditions analysis, programme, serial views and site models at neighbourhood scale.',
+    'capability.4.title': 'Passive & Environmental',
     'capability.4.body':
-      'Interface design and motion for sites and products that feel as considered as the printed piece.',
+      'Solar orientation, overhang depth and solstice shading studies, so a building is comfortable before any system is switched on.',
 
-    'stats.years': 'Years in practice',
-    'stats.projects': 'Projects delivered',
-    'stats.countries': 'Countries served',
-    'stats.awards': 'Awards & features',
+    'stats.projects': 'Projects',
+    'stats.disciplines': 'Disciplines',
+    'stats.years': 'Years represented',
+    'stats.assets': 'Drawings & models',
 
-    'cta.title': 'Let us build something worth keeping.',
-    'cta.body': 'Now booking projects for the coming season.',
+    'cta.title': 'Have a site, a brief, or just an idea?',
+    'cta.body': 'Open to new projects and collaborations.',
     'cta.button': 'Start a Conversation',
 
     'work.eyebrow': 'The Archive',
     'work.title': 'Selected Works',
     'work.aside':
-      'Identity, editorial, packaging and digital work — filter the archive by discipline or reorder it by year.',
+      'Residential, interiors, commercial and urban design. Filter by discipline or reorder by year.',
     'work.filter.all': 'All',
-    'work.filter.branding': 'Branding',
-    'work.filter.editorial': 'Editorial',
-    'work.filter.digital': 'Digital',
-    'work.filter.packaging': 'Packaging',
-    'work.filter.spatial': 'Spatial',
+    'work.filter.residential': 'Residential',
+    'work.filter.commercial': 'Commercial',
+    'work.filter.interiors': 'Interiors',
+    'work.filter.urban': 'Urban',
     'work.sort.label': 'Order',
     'work.sort.yearDesc': 'Newest first',
     'work.sort.yearAsc': 'Oldest first',
@@ -98,54 +98,40 @@ const translations = {
     'work.view': 'View',
 
     'project.back': 'Back to the archive',
-    'project.client': 'Client',
+    'project.client': 'Project',
     'project.role': 'Role',
     'project.year': 'Year',
     'project.discipline': 'Discipline',
-    'project.tools': 'Tools',
-    'project.overview': 'Overview',
-    'project.gallery': 'Gallery',
+    'project.tools': 'Media',
+    'project.gallery': 'Drawings & Models',
     'project.next': 'Next project',
     'project.notfound': 'This project is not in the archive.',
     'project.notfoundCta': 'Return to the archive',
 
-    'bio.eyebrow': 'The Atelier',
+    'bio.eyebrow': 'The Studio',
     'bio.title': 'Mariela Brown',
-    'bio.role': 'Designer & Art Director',
+    'bio.role': 'Architectural & Interior Designer',
     'bio.p1':
-      'Mariela Brown is a designer and art director whose work spans identity, editorial and digital craft. Her practice is grounded in a simple conviction: that restraint reads as confidence, and confidence is what makes a brand feel expensive.',
+      'Mariela Brown designs buildings, interiors and public space. Her work runs from a single reception desk to a city block, and it is held together by a way of working rather than by a style.',
     'bio.p2':
-      'She works closely with a small number of clients each year — houses, galleries, hospitality groups and founders who want a visual language built to outlast a trend cycle. Every engagement is led personally, from first conversation to final press check.',
+      'Each project starts in analogue — freehand sketches, watercolour perspectives, and study models cut and folded in paper and photographed from every side. Working at that scale makes a bad idea obvious early, and a good one worth developing.',
     'bio.p3':
-      'Her work has been recognised for its typographic rigour and its instinct for material — the weight of a paper, the temperature of a colour, the pause before a headline resolves.',
+      'From there the project moves into Revit and rendering, where orientation, overhang depth and daylight are tested against the real sun angles of the site. The drawings that result are meant to be built from, not just looked at.',
     'bio.approach.title': 'Approach',
     'bio.approach.body':
-      'Research, then reduction. Every project begins with immersion and ends with subtraction — removing everything that dilutes the idea until only the essential remains.',
-    'bio.timeline.title': 'Selected Milestones',
+      'Site and sun first, then the section, then everything else. Draw it by hand until it is understood, model it until it stands up, and only then let the software confirm it.',
     'bio.services.title': 'Disciplines',
-    'bio.download': 'Download CV',
-
-    'timeline.1.year': '2014',
-    'timeline.1.title': 'Practice founded',
-    'timeline.1.desc': 'Opened an independent studio focused on identity and editorial design.',
-    'timeline.2.year': '2018',
-    'timeline.2.title': 'First international commission',
-    'timeline.2.desc': 'Began working with clients across Europe and Latin America.',
-    'timeline.3.year': '2021',
-    'timeline.3.title': 'Editorial recognition',
-    'timeline.3.desc': 'Work featured in international design annuals and press.',
-    'timeline.4.year': '2024',
-    'timeline.4.title': 'Studio expansion',
-    'timeline.4.desc': 'Added digital experience and motion direction to the offering.',
+    'bio.placeholderNote':
+      'Placeholder biography — replace with your own words.',
 
     'contact.eyebrow': 'Enquiries',
     'contact.title': 'Let us begin.',
     'contact.lede':
-      'Tell me about the project — the ambition, the timeline, the audience. Enquiries are answered personally within two business days.',
+      'Tell me about the project — the site, the brief, the timeline. Enquiries are answered personally.',
     'contact.emailLabel': 'Email',
     'contact.socialLabel': 'Elsewhere',
     'contact.studioLabel': 'Studio',
-    'contact.studioValue': 'Available worldwide · Remote & on-site',
+    'contact.studioValue': 'Remote & on-site',
     'contact.hoursLabel': 'Response time',
     'contact.hoursValue': 'Within two business days',
     'contact.form.name': 'Full name',
@@ -153,9 +139,9 @@ const translations = {
     'contact.form.email': 'Email address',
     'contact.form.emailPh': 'you@company.com',
     'contact.form.subject': 'Project type',
-    'contact.form.subjectPh': 'Brand identity, editorial, digital…',
+    'contact.form.subjectPh': 'Residential, interiors, urban…',
     'contact.form.message': 'The brief',
-    'contact.form.messagePh': 'A few lines about what you have in mind.',
+    'contact.form.messagePh': 'A few lines about the site and what you have in mind.',
     'contact.form.submit': 'Send Enquiry',
     'contact.form.sending': 'Opening your mail client…',
     'contact.form.note':
@@ -169,13 +155,11 @@ const translations = {
     'styleguide.type': 'Typography',
     'styleguide.components': 'Components',
 
-    'footer.tagline':
-      'Design and art direction for brands with something worth saying.',
+    'footer.tagline': 'Architecture, interiors and public space.',
     'footer.nav': 'Navigate',
     'footer.social': 'Follow',
     'footer.contactCol': 'Enquiries',
     'footer.copyright': '© 2026 Mariela Brown. All rights reserved.',
-    'footer.credit': 'Designed & built with care.',
     'footer.top': 'Back to top'
   },
 
@@ -184,7 +168,7 @@ const translations = {
 
     'nav.home': 'Inicio',
     'nav.work': 'Obra',
-    'nav.bio': 'Taller',
+    'nav.bio': 'Estudio',
     'nav.contact': 'Contacto',
     'nav.styleguide': 'Guía de Estilo',
     'nav.menu': 'Menú',
@@ -196,71 +180,68 @@ const translations = {
     'a11y.top': 'Volver arriba',
 
     'loader.mark': 'Mariela Brown',
-    'loader.status': 'Curando la colección',
 
-    'hero.eyebrow': 'Diseñadora · Directora de Arte · Desde 2014',
+    'hero.eyebrow': 'Arquitectura · Interiores · Diseño Urbano',
     'hero.line1': 'Mariela',
     'hero.line2': 'Brown',
     'hero.blurb':
-      'Un estudio de diseño fundado en la contención, el oficio y el detalle medido: identidades, sistemas editoriales y experiencias digitales para marcas que aspiran a ser recordadas.',
-    'hero.cta.work': 'Ver la Colección',
-    'hero.cta.contact': 'Encargar un Proyecto',
+      'Edificios, interiores y espacio público: dibujados a mano, construidos como maquetas y resueltos en tres dimensiones. Una práctica que ensaya una idea en papel antes de confiarla a la pantalla.',
+    'hero.cta.work': 'Ver la Obra',
+    'hero.cta.contact': 'Iniciar un Proyecto',
     'hero.scroll': 'Desplazar',
-    'hero.availability': 'Acepta encargos seleccionados',
 
-    'marquee.1': 'Identidad de Marca',
-    'marquee.2': 'Dirección de Arte',
-    'marquee.3': 'Diseño Editorial',
-    'marquee.4': 'Experiencia Digital',
-    'marquee.5': 'Packaging',
-    'marquee.6': 'Diseño Espacial',
+    'marquee.1': 'Residencial',
+    'marquee.2': 'Interiores',
+    'marquee.3': 'Reutilización Adaptativa',
+    'marquee.4': 'Espacio Público',
+    'marquee.5': 'Diseño Pasivo',
+    'marquee.6': 'Maquetas',
 
     'featured.eyebrow': 'Obra Seleccionada',
-    'featured.title': 'Una colección construida sobre una confianza serena.',
+    'featured.title': 'Todo proyecto empieza en papel.',
     'featured.aside':
-      'Cada encargo comienza con la misma pregunta: ¿qué debería sentir alguien ante esta marca antes de leer una sola palabra?',
+      'Primero llegan los bocetos, las acuarelas y las maquetas de estudio. Los renders vienen después, para confirmar lo que la mano ya había resuelto.',
     'featured.cta': 'Ver todos los proyectos',
 
     'philosophy.eyebrow': 'El Estudio',
-    'philosophy.title': 'El lujo no es ornamento. Es precisión.',
+    'philosophy.title': 'Primero se diseñan la luz y la sección.',
     'philosophy.body1':
-      'Mariela Brown trabaja en la intersección entre marca, editorial e interfaz, construyendo sistemas visuales que mantienen la compostura en una tarjeta, en una fachada y en una pantalla.',
+      'El trabajo cambia de escala —un mostrador de recepción, una vivienda, una manzana— pero el método se mantiene. Entender el lugar y el sol, encontrar la sección que hace funcionar el espacio y dejar que la planta y el alzado se deriven de ella.',
     'philosophy.body2':
-      'La obra privilegia el espacio generoso, la tipografía exacta y los materiales que premian la atención. No se añade nada que no se haya ganado su lugar.',
-    'philosophy.cta': 'Sobre Mariela',
+      'Dibujar a mano mantiene el pensamiento lo bastante lento como para ser honesto. Las maquetas revelan lo que una pantalla perdona. Solo entonces el proyecto pasa a Revit y al render, donde debe demostrarse a la luz del día.',
+    'philosophy.cta': 'Sobre el estudio',
 
-    'capability.1.title': 'Identidad de Marca',
+    'capability.1.title': 'Residencial',
     'capability.1.body':
-      'Posicionamiento, naming, marcas, sistemas tipográficos y las guías que los mantienen intactos durante años.',
-    'capability.2.title': 'Dirección de Arte',
+      'Viviendas nuevas, unidades auxiliares y reformas integrales: de la volumetría y la orientación a plantas, secciones y alzados.',
+    'capability.2.title': 'Interiores',
     'capability.2.body':
-      'Fotografía, estilismo y dirección de campaña: del concepto y el casting hasta el etalonaje final.',
-    'capability.3.title': 'Editorial e Impresión',
+      'Arquitectura de interiores y carpintería: programación del espacio, circulación, acabados, mobiliario a medida y los detalles que sostienen una sala.',
+    'capability.3.title': 'Urbano y Paisaje',
     'capability.3.body':
-      'Libros, lookbooks y revistas. Arquitectura de retícula, elección de papel, acabados y supervisión de imprenta.',
-    'capability.4.title': 'Experiencia Digital',
+      'Espacio público y estrategia de sitio: análisis del estado actual, programa, vistas seriadas y maquetas a escala de barrio.',
+    'capability.4.title': 'Pasivo y Ambiental',
     'capability.4.body':
-      'Diseño de interfaz y movimiento para sitios y productos tan cuidados como la pieza impresa.',
+      'Orientación solar, profundidad de aleros y estudios de sombra en los solsticios, para que un edificio sea confortable antes de encender ninguna instalación.',
 
-    'stats.years': 'Años de práctica',
-    'stats.projects': 'Proyectos entregados',
-    'stats.countries': 'Países atendidos',
-    'stats.awards': 'Premios y publicaciones',
+    'stats.projects': 'Proyectos',
+    'stats.disciplines': 'Disciplinas',
+    'stats.years': 'Años representados',
+    'stats.assets': 'Dibujos y maquetas',
 
-    'cta.title': 'Construyamos algo que merezca conservarse.',
-    'cta.body': 'Agenda abierta para la próxima temporada.',
+    'cta.title': '¿Tienes un sitio, un encargo o solo una idea?',
+    'cta.body': 'Abierta a nuevos proyectos y colaboraciones.',
     'cta.button': 'Iniciar una Conversación',
 
     'work.eyebrow': 'El Archivo',
     'work.title': 'Obras Seleccionadas',
     'work.aside':
-      'Identidad, editorial, packaging y trabajo digital. Filtra el archivo por disciplina u ordénalo por año.',
+      'Residencial, interiores, comercial y diseño urbano. Filtra por disciplina u ordena por año.',
     'work.filter.all': 'Todo',
-    'work.filter.branding': 'Marca',
-    'work.filter.editorial': 'Editorial',
-    'work.filter.digital': 'Digital',
-    'work.filter.packaging': 'Packaging',
-    'work.filter.spatial': 'Espacial',
+    'work.filter.residential': 'Residencial',
+    'work.filter.commercial': 'Comercial',
+    'work.filter.interiors': 'Interiores',
+    'work.filter.urban': 'Urbano',
     'work.sort.label': 'Orden',
     'work.sort.yearDesc': 'Más recientes',
     'work.sort.yearAsc': 'Más antiguos',
@@ -271,54 +252,40 @@ const translations = {
     'work.view': 'Ver',
 
     'project.back': 'Volver al archivo',
-    'project.client': 'Cliente',
+    'project.client': 'Proyecto',
     'project.role': 'Rol',
     'project.year': 'Año',
     'project.discipline': 'Disciplina',
-    'project.tools': 'Herramientas',
-    'project.overview': 'Descripción',
-    'project.gallery': 'Galería',
+    'project.tools': 'Medios',
+    'project.gallery': 'Dibujos y Maquetas',
     'project.next': 'Siguiente proyecto',
     'project.notfound': 'Este proyecto no está en el archivo.',
     'project.notfoundCta': 'Volver al archivo',
 
-    'bio.eyebrow': 'El Taller',
+    'bio.eyebrow': 'El Estudio',
     'bio.title': 'Mariela Brown',
-    'bio.role': 'Diseñadora y Directora de Arte',
+    'bio.role': 'Diseñadora de Arquitectura e Interiores',
     'bio.p1':
-      'Mariela Brown es diseñadora y directora de arte, con una obra que abarca identidad, editorial y oficio digital. Su práctica parte de una convicción sencilla: la contención se lee como confianza, y la confianza es lo que hace que una marca se sienta valiosa.',
+      'Mariela Brown diseña edificios, interiores y espacio público. Su trabajo va de un simple mostrador de recepción a una manzana entera, y lo que lo unifica es una manera de trabajar más que un estilo.',
     'bio.p2':
-      'Trabaja de cerca con un número reducido de clientes cada año: casas, galerías, grupos de hostelería y fundadores que buscan un lenguaje visual capaz de sobrevivir a las modas. Cada encargo lo dirige personalmente, desde la primera conversación hasta la última prueba de imprenta.',
+      'Cada proyecto empieza en analógico: bocetos a mano alzada, perspectivas a la acuarela y maquetas de estudio cortadas y plegadas en papel, fotografiadas desde todos sus lados. Trabajar a esa escala hace evidente pronto una mala idea, y merecedora de desarrollo una buena.',
     'bio.p3':
-      'Su trabajo ha sido reconocido por su rigor tipográfico y su instinto para el material: el gramaje de un papel, la temperatura de un color, la pausa antes de que un titular se resuelva.',
+      'A partir de ahí el proyecto pasa a Revit y al render, donde la orientación, la profundidad del alero y la luz natural se comprueban frente a los ángulos solares reales del lugar. Los planos resultantes están pensados para construirse, no solo para mirarse.',
     'bio.approach.title': 'Método',
     'bio.approach.body':
-      'Investigar y después reducir. Cada proyecto empieza con inmersión y termina con sustracción: quitar todo lo que diluye la idea hasta que solo queda lo esencial.',
-    'bio.timeline.title': 'Hitos Seleccionados',
+      'Primero el sitio y el sol, después la sección y luego todo lo demás. Dibujarlo a mano hasta entenderlo, maquetarlo hasta que se sostenga, y solo entonces dejar que el software lo confirme.',
     'bio.services.title': 'Disciplinas',
-    'bio.download': 'Descargar CV',
-
-    'timeline.1.year': '2014',
-    'timeline.1.title': 'Fundación del estudio',
-    'timeline.1.desc': 'Abre un estudio independiente centrado en identidad y diseño editorial.',
-    'timeline.2.year': '2018',
-    'timeline.2.title': 'Primer encargo internacional',
-    'timeline.2.desc': 'Comienza a trabajar con clientes de Europa y América Latina.',
-    'timeline.3.year': '2021',
-    'timeline.3.title': 'Reconocimiento editorial',
-    'timeline.3.desc': 'Su obra aparece en anuarios y publicaciones de diseño internacionales.',
-    'timeline.4.year': '2024',
-    'timeline.4.title': 'Ampliación del estudio',
-    'timeline.4.desc': 'Incorpora experiencia digital y dirección de movimiento a los servicios.',
+    'bio.placeholderNote':
+      'Biografía provisional — sustitúyela por tus propias palabras.',
 
     'contact.eyebrow': 'Consultas',
     'contact.title': 'Empecemos.',
     'contact.lede':
-      'Cuéntame sobre el proyecto: la ambición, los plazos, el público. Las consultas se responden personalmente en un plazo de dos días hábiles.',
+      'Cuéntame sobre el proyecto: el lugar, el encargo, los plazos. Las consultas se responden personalmente.',
     'contact.emailLabel': 'Correo',
     'contact.socialLabel': 'En otros lugares',
     'contact.studioLabel': 'Estudio',
-    'contact.studioValue': 'Disponible en todo el mundo · Remoto y presencial',
+    'contact.studioValue': 'Remoto y presencial',
     'contact.hoursLabel': 'Tiempo de respuesta',
     'contact.hoursValue': 'En dos días hábiles',
     'contact.form.name': 'Nombre completo',
@@ -326,9 +293,9 @@ const translations = {
     'contact.form.email': 'Correo electrónico',
     'contact.form.emailPh': 'tu@empresa.com',
     'contact.form.subject': 'Tipo de proyecto',
-    'contact.form.subjectPh': 'Identidad, editorial, digital…',
+    'contact.form.subjectPh': 'Residencial, interiores, urbano…',
     'contact.form.message': 'El encargo',
-    'contact.form.messagePh': 'Unas líneas sobre lo que tienes en mente.',
+    'contact.form.messagePh': 'Unas líneas sobre el lugar y lo que tienes en mente.',
     'contact.form.submit': 'Enviar Consulta',
     'contact.form.sending': 'Abriendo tu gestor de correo…',
     'contact.form.note':
@@ -342,13 +309,11 @@ const translations = {
     'styleguide.type': 'Tipografía',
     'styleguide.components': 'Componentes',
 
-    'footer.tagline':
-      'Diseño y dirección de arte para marcas con algo que merece decirse.',
+    'footer.tagline': 'Arquitectura, interiores y espacio público.',
     'footer.nav': 'Navegar',
     'footer.social': 'Seguir',
     'footer.contactCol': 'Consultas',
     'footer.copyright': '© 2026 Mariela Brown. Todos los derechos reservados.',
-    'footer.credit': 'Diseñado y construido con esmero.',
     'footer.top': 'Volver arriba'
   }
 };

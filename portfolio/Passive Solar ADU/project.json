@@ -1,0 +1,28 @@
+{
+  "slug": "passive-solar-adu",
+  "title": { "en": "Passive Solar ADU", "es": "ADU Solar Pasiva" },
+  "client": { "en": "Studio project", "es": "Proyecto de taller" },
+  "role": { "en": "Architectural Design", "es": "Diseño Arquitectónico" },
+  "summary": {
+    "en": "A compact dwelling designed from the sun angles up, tested at both solstices.",
+    "es": "Una vivienda compacta diseñada a partir del ángulo solar y verificada en ambos solsticios."
+  },
+  "body": {
+    "en": [
+      "An accessory dwelling unit where the roof does the environmental work. A deep overhang on the south face is set to the exact depth that shades the glazing at the summer solstice and lets the low winter sun reach the back wall — the two conditions were drawn as paired elevation studies rather than assumed.",
+      "The plan puts the glazed corner where the living space is, with the entry doors and a punched window sized down as the elevation turns away from the sun. Horizontal siding steps from a pale lower band to a warmer upper band, keeping the small volume from reading as a shed.",
+      "Developed from massing sketches and a physical study model photographed from every face and from above, then resolved as a floor plan, solstice elevation studies, a section box, and interior views of the kitchen and living room."
+    ],
+    "es": [
+      "Una vivienda auxiliar en la que la cubierta hace el trabajo ambiental. El gran alero de la fachada sur está ajustado a la profundidad exacta que protege el acristalamiento en el solsticio de verano y deja que el sol bajo de invierno alcance el muro del fondo: ambas condiciones se dibujaron como estudios de alzado emparejados en lugar de darse por supuestas.",
+      "La planta sitúa la esquina acristalada en la zona de estar, y reduce las puertas de acceso y una ventana perforada a medida que el alzado se aparta del sol. El revestimiento horizontal pasa de una franja inferior clara a otra superior más cálida, evitando que el pequeño volumen se lea como un cobertizo.",
+      "Desarrollado a partir de bocetos de volumetría y una maqueta de estudio fotografiada desde todas sus caras y desde el aire, y resuelto después como planta, estudios de alzado en los solsticios, una caja de sección y vistas interiores de la cocina y el salón."
+    ]
+  },
+  "year": "2024",
+  "discipline": "residential",
+  "tools": ["Revit", "Enscape", "Physical model"],
+  "featured": true,
+  "cover": "Renderings/3D Exterior - South.png",
+  "monogram": "PS"
+}

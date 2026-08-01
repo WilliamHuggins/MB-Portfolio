@@ -380,6 +380,34 @@ function initMarquee() {
   });
 }
 
+/* ------------------------------------------------------------------ stats */
+
+/**
+ * Fill `[data-stat]` from the archive itself, so the numbers on the page can
+ * never drift away from the work that is actually published.
+ */
+function renderStats() {
+  const nodes = document.querySelectorAll('[data-stat]');
+  if (!nodes.length || !projects.length) return;
+
+  const years = projects.map((p) => Number(p.year)).filter(Boolean);
+  const values = {
+    projects: String(projects.length).padStart(2, '0'),
+    disciplines: String(new Set(projects.map((p) => p.discipline)).size).padStart(2, '0'),
+    years: years.length
+      ? (Math.min(...years) === Math.max(...years)
+          ? String(Math.min(...years))
+          : `${Math.min(...years)}–${Math.max(...years)}`)
+      : '—',
+    assets: String(projects.reduce((n, p) => n + (p.cover ? 1 : 0) + p.images.length, 0))
+  };
+
+  nodes.forEach((el) => {
+    const key = el.getAttribute('data-stat');
+    if (values[key] !== undefined) el.textContent = values[key];
+  });
+}
+
 /* ------------------------------------------------------- featured (home) */
 
 function renderFeatured() {
@@ -684,6 +712,7 @@ function boot() {
   initHeroAura();
   initMagnetic();
 
+  renderStats();
   renderFeatured();
   initArchive();
   renderProject();

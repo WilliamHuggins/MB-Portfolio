@@ -1,27 +1,25 @@
 /**
  * PROJECT ARCHIVE
  * ---------------------------------------------------------------------------
- * Single source of truth for every project shown on the site.
- *
- * This file can be regenerated from a `portfolio/` folder of real assets:
+ * Generated from the `portfolio/` folder by:
  *
  *     npm run sync:portfolio
  *
- * See `scripts/sync-portfolio.mjs` and `portfolio/README.md` for the folder
- * convention. Any project whose `cover` is null renders an elegant monogram
- * placeholder, so the site looks finished before the artwork lands.
+ * Edit the copy here or in each project's `portfolio/<project>/project.json` —
+ * the sync merges rather than overwrites, so hand-written text survives.
+ * See `portfolio/README.md` for the folder convention.
  *
  * Schema
- *   slug        stable url id            → /project/?p=<slug>
+ *   slug        stable url id            -> /project/?p=<slug>
  *   title       { en, es }
  *   client      { en, es }
  *   role        { en, es }
- *   summary     { en, es }  one-line, used on cards and meta description
+ *   summary     { en, es }  one line, used on cards and meta description
  *   body        { en: [paragraphs], es: [paragraphs] }
  *   year        string
- *   discipline  one of: branding | editorial | digital | packaging | spatial
+ *   discipline  one of: residential | commercial | interiors | urban
  *   tools       string[]
- *   featured    boolean — surfaces on the home page
+ *   featured    boolean - surfaces on the home page
  *   cover       image path or null
  *   images      image paths for the project gallery
  *   monogram    2 letters drawn in the placeholder artwork
@@ -29,236 +27,326 @@
 
 const projects = [
   {
-    slug: 'maison-lumiere',
-    title: { en: 'Maison Lumière', es: 'Maison Lumière' },
-    client: { en: 'Maison Lumière, Paris', es: 'Maison Lumière, París' },
-    role: { en: 'Identity & Art Direction', es: 'Identidad y Dirección de Arte' },
+    slug: 'childrens-waiting-room',
+    title: {
+      en: 'Children\'s Waiting Room',
+      es: 'Sala de Espera Infantil'
+    },
+    client: {
+      en: 'Academic studio project',
+      es: 'Proyecto académico de taller'
+    },
+    role: {
+      en: 'Interior Architecture',
+      es: 'Arquitectura de Interiores'
+    },
     summary: {
-      en: 'A complete identity for a heritage lighting house, rebuilt around light itself.',
-      es: 'Identidad completa para una casa de iluminación centenaria, reconstruida en torno a la luz.'
+      en: 'A marine-themed waiting room where the whole room is shaped like a breaking wave.',
+      es: 'Una sala de espera de tema marino donde el propio espacio toma la forma de una ola rompiendo.'
     },
     body: {
       en: [
-        'Maison Lumière had spent sixty years making light and almost no time deciding what it should look like. The rebuild started from the only material the house has ever worked in: a single beam, cast at an angle, resolving into a monogram.',
-        'The typographic system pairs a high-contrast display serif with a quiet geometric sans, set on a grid generous enough to let each fixture breathe. Warm brass foil on uncoated stock carries the identity into the physical world — invitations, care cards, the certificate that accompanies every piece.',
-        'The system launched across the flagship showroom, the trade catalogue and a rebuilt commerce experience, and now governs everything from packaging tape to the plaque beside the door.'
+        'A waiting room for children takes the ocean as its organising idea, and then commits to it completely. The enclosing shell is a single curved form modelled on a breaking wave, with openings cut as wave crests rather than rectangles, so the room reads as one gesture from the pavement to the reception desk.',
+        'Inside, a band of blue and sand runs across floor and wall as a continuous current, drawing a child from the entrance past the sensory table and the marine life tank toward the seating. A curved reception desk, developed through its own sequence of sketches and study models, sits at the head of that current.',
+        'The project was worked out in parallel across media: space programming and floor plans, an isometric, section and serial views, watercolour perspectives to test light and colour, and a series of white paper models photographed from entrance, reception, side and above.'
       ],
       es: [
-        'Maison Lumière llevaba sesenta años fabricando luz y casi ningún tiempo decidiendo cómo debía verse. La reconstrucción partió del único material con el que la casa ha trabajado siempre: un haz único, proyectado en ángulo, que se resuelve en un monograma.',
-        'El sistema tipográfico combina una serif de display de alto contraste con una sans geométrica y discreta, sobre una retícula lo bastante generosa para que cada pieza respire. El latón cálido estampado sobre papel sin estucar lleva la identidad al mundo físico: invitaciones, tarjetas de cuidado y el certificado que acompaña cada obra.',
-        'El sistema se lanzó en el showroom insignia, el catálogo profesional y una experiencia de comercio reconstruida, y hoy rige desde la cinta del embalaje hasta la placa junto a la puerta.'
-      ]
-    },
-    year: '2025',
-    discipline: 'branding',
-    tools: ['Illustrator', 'InDesign', 'Figma'],
-    featured: true,
-    cover: null,
-    images: [],
-    monogram: 'ML'
-  },
-  {
-    slug: 'the-quiet-hours',
-    title: { en: 'The Quiet Hours', es: 'Las Horas Silenciosas' },
-    client: { en: 'Independent publisher', es: 'Editorial independiente' },
-    role: { en: 'Editorial Design', es: 'Diseño Editorial' },
-    summary: {
-      en: 'A 240-page photographic monograph on stillness, set in a single typeface.',
-      es: 'Una monografía fotográfica de 240 páginas sobre la quietud, compuesta en una sola tipografía.'
-    },
-    body: {
-      en: [
-        'A monograph of night photography needed a book that could hold silence. The answer was restriction: one typeface, three sizes, a single column that shifts position across the spread as the sequence moves from dusk toward morning.',
-        'Images run to the trim on the darkest plates and retreat into deep margins as the light returns, so the reader feels the passage of hours in the paper itself rather than in any caption.',
-        'Printed in duotone on a heavy uncoated stock with an exposed Swiss binding, the volume opens flat — every spread readable without a hand holding it down.'
-      ],
-      es: [
-        'Una monografía de fotografía nocturna necesitaba un libro capaz de sostener el silencio. La respuesta fue la restricción: una tipografía, tres cuerpos y una sola columna que cambia de posición a lo largo del pliego a medida que la secuencia avanza del anochecer hacia la mañana.',
-        'Las imágenes llegan al corte en las láminas más oscuras y se repliegan hacia márgenes amplios cuando vuelve la luz, de modo que el lector percibe el paso de las horas en el propio papel y no en un pie de foto.',
-        'Impreso a dos tintas sobre papel grueso sin estucar y con costura suiza vista, el volumen abre completamente plano: cada doble página se lee sin necesidad de sujetarla.'
-      ]
-    },
-    year: '2024',
-    discipline: 'editorial',
-    tools: ['InDesign', 'Photoshop', 'Capture One'],
-    featured: true,
-    cover: null,
-    images: [],
-    monogram: 'QH'
-  },
-  {
-    slug: 'aurelia-skin',
-    title: { en: 'Aurelia Skin', es: 'Aurelia Skin' },
-    client: { en: 'Aurelia, Barcelona', es: 'Aurelia, Barcelona' },
-    role: { en: 'Packaging & Brand', es: 'Packaging y Marca' },
-    summary: {
-      en: 'Refillable glass, blind-embossed cartons and a palette drawn from raw ingredients.',
-      es: 'Vidrio rellenable, estuches gofrados en seco y una paleta extraída de los ingredientes en crudo.'
-    },
-    body: {
-      en: [
-        'Aurelia asked for packaging that would survive being unboxed once and kept forever. Every vessel is refillable glass with a weighted base; every carton is blind-embossed rather than printed, so the brand is felt before it is read.',
-        'The palette is taken directly from the raw botanicals — bergamot, clay, tallow — sampled under daylight and held to four colours across the entire range so the shelf reads as one object.',
-        'A structural system of three bottle heights and two cap profiles covers the full catalogue, cutting tooling cost while making the line instantly recognisable from across a room.'
-      ],
-      es: [
-        'Aurelia pidió un packaging capaz de sobrevivir a un único desembalaje y quedarse para siempre. Cada envase es de vidrio rellenable con base contrapesada; cada estuche va gofrado en seco en lugar de impreso, de modo que la marca se siente antes de leerse.',
-        'La paleta procede directamente de los botánicos en crudo —bergamota, arcilla, sebo—, muestreados a luz natural y reducidos a cuatro colores en toda la gama para que el lineal se lea como un solo objeto.',
-        'Un sistema estructural de tres alturas de frasco y dos perfiles de tapa cubre el catálogo completo: reduce el coste de moldes y hace la línea reconocible al instante desde el otro extremo de una sala.'
-      ]
-    },
-    year: '2025',
-    discipline: 'packaging',
-    tools: ['Illustrator', 'Dimension', 'Blender'],
-    featured: true,
-    cover: null,
-    images: [],
-    monogram: 'AS'
-  },
-  {
-    slug: 'atelier-noir',
-    title: { en: 'Atelier Noir', es: 'Atelier Noir' },
-    client: { en: 'Atelier Noir, Milan', es: 'Atelier Noir, Milán' },
-    role: { en: 'Digital Experience', es: 'Experiencia Digital' },
-    summary: {
-      en: 'A commerce experience for a couture atelier, built to feel like a private viewing.',
-      es: 'Una experiencia de comercio para un atelier de alta costura, con el aire de un pase privado.'
-    },
-    body: {
-      en: [
-        'Couture does not sell in a grid. The site was built as a sequence of full-bleed rooms the visitor moves through, each garment introduced alone, with its fabric, its maker and the hours it took.',
-        'Motion carries the weight of the concept: nothing fades, everything wipes and settles, at the pace of a curtain being drawn. Interaction is deliberately unhurried and entirely keyboard-navigable.',
-        'The result reduced enquiry drop-off by more than a third while raising the average value of a booked appointment.'
-      ],
-      es: [
-        'La alta costura no se vende en una retícula. El sitio se construyó como una secuencia de salas a sangre completa por las que el visitante avanza, presentando cada prenda en solitario, con su tejido, su artesano y las horas invertidas.',
-        'El movimiento sostiene el concepto: nada se desvanece, todo se desliza y se asienta al ritmo de una cortina que se descorre. La interacción es deliberadamente pausada y por completo navegable con teclado.',
-        'El resultado redujo en más de un tercio el abandono en las consultas y elevó el valor medio de cada cita agendada.'
-      ]
-    },
-    year: '2026',
-    discipline: 'digital',
-    tools: ['Figma', 'After Effects', 'WebGL'],
-    featured: true,
-    cover: null,
-    images: [],
-    monogram: 'AN'
-  },
-  {
-    slug: 'casa-del-mar',
-    title: { en: 'Casa del Mar', es: 'Casa del Mar' },
-    client: { en: 'Casa del Mar, Cádiz', es: 'Casa del Mar, Cádiz' },
-    role: { en: 'Identity & Wayfinding', es: 'Identidad y Señalética' },
-    summary: {
-      en: 'Identity, signage and printed matter for a nine-room coastal house.',
-      es: 'Identidad, señalética e impresos para una casa costera de nueve habitaciones.'
-    },
-    body: {
-      en: [
-        'A nine-room house on the Atlantic coast, restored from a merchant villa. The identity had to sit inside lime-washed walls without competing with them, so the entire system is cut, cast or engraved — never applied as ink.',
-        'Room numbers are sand-cast brass; the menu is letterpressed weekly on a single sheet; the wordmark exists only in one weight, at three sizes, forever.',
-        'Wayfinding follows the building rather than a manual: signage appears exactly where a guest first hesitates, and nowhere else.'
-      ],
-      es: [
-        'Una casa de nueve habitaciones en la costa atlántica, restaurada a partir de una villa de comerciantes. La identidad debía convivir con los muros encalados sin competir con ellos, así que todo el sistema está cortado, fundido o grabado: nunca aplicado como tinta.',
-        'Los números de habitación son de latón fundido en arena; la carta se imprime en tipografía cada semana sobre una única hoja; el logotipo existe en un solo peso, en tres tamaños, para siempre.',
-        'La señalética sigue al edificio y no a un manual: aparece exactamente donde el huésped duda por primera vez, y en ningún otro sitio.'
+        'Una sala de espera infantil toma el océano como idea organizadora y se compromete con ella por completo. La envolvente es una única forma curva modelada a partir de una ola rompiendo, con aberturas recortadas como crestas en lugar de rectángulos, de modo que la sala se lee como un solo gesto desde la acera hasta el mostrador de recepción.',
+        'En el interior, una franja azul y arena recorre suelo y muro como una corriente continua, guiando al niño desde la entrada, pasando por la mesa sensorial y el acuario, hasta la zona de espera. Un mostrador curvo, desarrollado con su propia secuencia de bocetos y maquetas de estudio, se sitúa al inicio de esa corriente.',
+        'El proyecto se resolvió en paralelo en distintos medios: programación del espacio y plantas, una isometría, sección y vistas seriadas, perspectivas a la acuarela para ensayar luz y color, y una serie de maquetas de papel blanco fotografiadas desde la entrada, la recepción, el lateral y el aire.'
       ]
     },
     year: '2023',
-    discipline: 'spatial',
-    tools: ['Illustrator', 'AutoCAD', 'Cinema 4D'],
-    featured: false,
-    cover: null,
-    images: [],
-    monogram: 'CM'
+    discipline: 'interiors',
+    tools: ['Physical model', 'Watercolour', 'Hand drafting'],
+    featured: true,
+    cover: '/portfolio/Children_s%20Waiting%20Room/Model%20Reception%20View.jpg',
+    images: [
+      '/portfolio/Children_s%20Waiting%20Room/20231115_135614.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Exterior%20Elevation.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Floor%20Plan%20Layout.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Isometric%20Sketch.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Marie%20Brown_Assignment%2310-11-15-2023%2025.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Marine%20Life%20Tank.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Aerial%20View.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Draft.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Entrance%20View.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Entrance.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Exterior%20View.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Model%20Side%20View.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Pattern%202.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Preferred%20Pattern%232.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Section.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Sensory%20Table.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Sensory%20Tank.png',
+      '/portfolio/Children_s%20Waiting%20Room/Serial%20Views%201.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Serial%20Views%202.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Shape.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Space%20Programming%2009-26-23.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Watercolor%20Perspective%202.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Watercolor_Perspective%201.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Floor%20Plan%20Layout.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Model%20process1.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Reception%20Desk%20Model%20Process2.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Reception%20Desk%20Model.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Reception%20Model.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Sketch1.jpg',
+      '/portfolio/Children_s%20Waiting%20Room/Reception%20Desk/Sketch2.jpg'
+    ],
+    monogram: 'CW'
   },
   {
-    slug: 'obra-journal',
-    title: { en: 'Obra Journal', es: 'Revista Obra' },
-    client: { en: 'Obra, Mexico City', es: 'Obra, Ciudad de México' },
-    role: { en: 'Art Direction', es: 'Dirección de Arte' },
+    slug: 'mid-century-modern-remodel',
+    title: {
+      en: 'Mid-Century Modern House Remodel',
+      es: 'Reforma de Casa Mid-Century Modern'
+    },
+    client: {
+      en: 'Private residence',
+      es: 'Residencia privada'
+    },
+    role: {
+      en: 'Architectural Design',
+      es: 'Diseño Arquitectónico'
+    },
     summary: {
-      en: 'A bilingual arts quarterly with a grid that changes with every issue.',
-      es: 'Una revista trimestral de arte bilingüe con una retícula que cambia en cada número.'
+      en: 'A whole-house remodel that keeps the low horizontal roofline and opens the ground floor.',
+      es: 'Una reforma integral que conserva la línea de cubierta horizontal y abre la planta baja.'
     },
     body: {
       en: [
-        'Obra publishes in Spanish and English on facing pages, which meant designing for two languages of different lengths without letting either look like a translation.',
-        'The solution is an asymmetric grid that gives Spanish the wider measure it needs and turns the difference into the magazine\'s signature — a visible seam down the centre of every spread.',
-        'Each issue reassigns one variable: the accent colour, the display face, or the position of the folio. The architecture stays; the surface never repeats.'
+        'A remodel of a mid-century house that treats the original horizontal roofline as the thing worth protecting. The extended eave is kept and pushed further, so the added upper storey reads as a shaded band rather than a second house stacked on the first.',
+        'The ground floor is opened to a full-width glazed elevation onto the terrace, with a covered balcony above it. Warm accent columns break the white stucco at regular intervals, and a dark upper cladding lets the added volume recede.',
+        'Studied as exterior renderings from two approaches, with interior options developed for the kitchen and the main suite.'
       ],
       es: [
-        'Obra se publica en español e inglés en páginas enfrentadas, lo que obligaba a diseñar para dos idiomas de extensión distinta sin que ninguno pareciera una traducción.',
-        'La solución es una retícula asimétrica que concede al español la medida más ancha que necesita y convierte esa diferencia en la firma de la revista: una costura visible en el centro de cada doble página.',
-        'Cada número reasigna una variable: el color de acento, la tipografía de display o la posición del folio. La arquitectura permanece; la superficie nunca se repite.'
+        'La reforma de una casa mid-century que trata la línea horizontal original de la cubierta como lo que merece protegerse. El alero se conserva y se prolonga, de modo que la planta superior añadida se lee como una franja en sombra y no como una segunda casa apilada sobre la primera.',
+        'La planta baja se abre con un alzado acristalado de toda la anchura hacia la terraza, con un balcón cubierto encima. Unos pilares de tono cálido interrumpen el estuco blanco a intervalos regulares, y un revestimiento oscuro en la planta alta hace retroceder el volumen añadido.',
+        'Estudiado mediante renders exteriores desde dos aproximaciones, con opciones interiores desarrolladas para la cocina y el dormitorio principal.'
       ]
     },
     year: '2024',
-    discipline: 'editorial',
-    tools: ['InDesign', 'Figma'],
+    discipline: 'residential',
+    tools: ['Revit', 'Enscape'],
     featured: false,
-    cover: null,
-    images: [],
-    monogram: 'OJ'
+    cover: '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20Exterior%20View%20Rendering_Enscape%20Software.png',
+    images: [
+      '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20-%20Exterior%20Rendering.jpg',
+      '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20View%20-%20Exterior%202%20Rendering.jpg',
+      '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20View%20-%20Kitchen%20Option%201.jpg',
+      '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20View%20-%20Main%20Suite%20-%20Opt%201.jpg',
+      '/portfolio/Mid-Century%20Modern%20House%20Remodel/3D%20View%20-%20Main%20Suite%20Opt%201%20Rendering.jpg'
+    ],
+    monogram: 'MC'
   },
   {
-    slug: 'verdant-house',
-    title: { en: 'Verdant House', es: 'Verdant House' },
-    client: { en: 'Verdant, London', es: 'Verdant, Londres' },
-    role: { en: 'Brand & Digital', es: 'Marca y Digital' },
+    slug: 'mixed-use-coffee-shop',
+    title: {
+      en: 'Mixed-Use Building — Coffee Shop',
+      es: 'Edificio de Uso Mixto — Cafetería'
+    },
+    client: {
+      en: 'Studio project',
+      es: 'Proyecto de taller'
+    },
+    role: {
+      en: 'Interior Design',
+      es: 'Diseño de Interiores'
+    },
     summary: {
-      en: 'A botanical apothecary rebuilt as one continuous system, from label to checkout.',
-      es: 'Una botica botánica reconstruida como un sistema continuo, de la etiqueta al pago.'
+      en: 'A ground-floor café fitted into a mixed-use building, planned around one long counter.',
+      es: 'Una cafetería en planta baja dentro de un edificio de uso mixto, organizada en torno a una única barra.'
     },
     body: {
       en: [
-        'Verdant sold beautifully in its own shop and poorly everywhere else — the brand simply did not survive the jump to a screen. The rebuild treats label and interface as one artefact.',
-        'A single drawn botanical set, one typeface at two optical sizes, and a colour system keyed to plant families carry the brand across bottle, shelf edge, invoice and product page without a single asset being redrawn.',
-        'The checkout was rebuilt in the same pass, cutting the path from product to confirmation to three screens.'
+        'The ground floor of a mixed-use building, fitted out as a café for a specialty coffee brand. A single long counter in poured concrete runs most of the depth of the tenancy, separating the service side from the room and giving the queue somewhere to go without crossing the seated area.',
+        'Seating is deliberately mixed: a communal table at the centre, small round two-tops along the glazing, and a bar shelf at the counter, so the same footprint works for a morning rush and an afternoon of laptops. Timber millwork warms a palette otherwise held to concrete, plaster and glass.',
+        'Presented as a colour-coded floor plan, a conceptual plan, three interior elevations and a set of interior and exterior renderings.'
       ],
       es: [
-        'Verdant vendía maravillosamente en su propia tienda y mal en todas partes: la marca sencillamente no sobrevivía al salto a una pantalla. La reconstrucción trata la etiqueta y la interfaz como un mismo objeto.',
-        'Un único conjunto de ilustraciones botánicas, una tipografía en dos tamaños ópticos y un sistema de color asociado a familias de plantas llevan la marca del frasco al lineal, de la factura a la ficha de producto, sin redibujar un solo recurso.',
-        'El proceso de compra se rehízo en la misma fase y redujo a tres pantallas el camino del producto a la confirmación.'
+        'La planta baja de un edificio de uso mixto, acondicionada como cafetería para una marca de café de especialidad. Una única barra larga de hormigón visto recorre casi todo el fondo del local, separa la zona de servicio de la sala y da a la cola un lugar donde esperar sin invadir el área de mesas.',
+        'Los asientos se mezclan a propósito: una mesa comunitaria en el centro, pequeñas mesas redondas junto al acristalamiento y una repisa alta en la barra, de modo que el mismo local sirve para la hora punta de la mañana y para una tarde de portátiles. La carpintería de madera templa una paleta por lo demás limitada a hormigón, yeso y vidrio.',
+        'Presentado como planta codificada por colores, planta conceptual, tres alzados interiores y un conjunto de renders interiores y exteriores.'
       ]
     },
-    year: '2025',
-    discipline: 'digital',
-    tools: ['Figma', 'Illustrator', 'Framer'],
-    featured: false,
-    cover: null,
-    images: [],
-    monogram: 'VH'
+    year: '2024',
+    discipline: 'commercial',
+    tools: ['3D rendering', 'Hand drafting'],
+    featured: true,
+    cover: '/portfolio/Mixed-use%20Building-Coffee%20Shop/3D%20View%201%20-%20Blue%20Bottle%20Coffee.jpg',
+    images: [
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/3D%20View%202%20-%20Blue%20Bottle%20Coffee.jpg',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/3D%20View%203%20Rendering.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/3D%20View%20Exterior%20Rendering.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Blue%20Bottle%20Coffee%20NB.jpeg',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Coffee%20Shop%20Floor%20Plan_Conceptual%20Design.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Espresso%20Martini.jpg',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Expresso.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Floor%20Plan%20Color%20Coded.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Graphic%20Mug.jpg',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Interior%20Elevation%201.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Interior%20Elevation%202.png',
+      '/portfolio/Mixed-use%20Building-Coffee%20Shop/Interior%20Elevation%203.png'
+    ],
+    monogram: 'CS'
   },
   {
-    slug: 'sala-nocturna',
-    title: { en: 'Sala Nocturna', es: 'Sala Nocturna' },
-    client: { en: 'Galería Sur, Buenos Aires', es: 'Galería Sur, Buenos Aires' },
-    role: { en: 'Exhibition Design', es: 'Diseño de Exposición' },
+    slug: 'passive-solar-adu',
+    title: {
+      en: 'Passive Solar ADU',
+      es: 'ADU Solar Pasiva'
+    },
+    client: {
+      en: 'Studio project',
+      es: 'Proyecto de taller'
+    },
+    role: {
+      en: 'Architectural Design',
+      es: 'Diseño Arquitectónico'
+    },
     summary: {
-      en: 'An exhibition lit to one lux, where the catalogue is the only light source.',
-      es: 'Una exposición iluminada a un lux, donde el catálogo es la única fuente de luz.'
+      en: 'A compact dwelling designed from the sun angles up, tested at both solstices.',
+      es: 'Una vivienda compacta diseñada a partir del ángulo solar y verificada en ambos solsticios.'
     },
     body: {
       en: [
-        'Twenty-two sculptures shown in near darkness. Visitors are handed a catalogue printed on a reflective stock and a single low lamp — the room is lit only by what each person carries.',
-        'Wall text was abolished. Everything a visitor needs sits in the catalogue, set large enough to read at arm\'s length in poor light, with a folded plan that doubles as the map.',
-        'The show ran for eleven weeks and travelled to two further cities with the design intact.'
+        'An accessory dwelling unit where the roof does the environmental work. A deep overhang on the south face is set to the exact depth that shades the glazing at the summer solstice and lets the low winter sun reach the back wall — the two conditions were drawn as paired elevation studies rather than assumed.',
+        'The plan puts the glazed corner where the living space is, with the entry doors and a punched window sized down as the elevation turns away from the sun. Horizontal siding steps from a pale lower band to a warmer upper band, keeping the small volume from reading as a shed.',
+        'Developed from massing sketches and a physical study model photographed from every face and from above, then resolved as a floor plan, solstice elevation studies, a section box, and interior views of the kitchen and living room.'
       ],
       es: [
-        'Veintidós esculturas expuestas casi a oscuras. A cada visitante se le entrega un catálogo impreso sobre papel reflectante y una pequeña lámpara: la sala se ilumina únicamente con lo que cada persona lleva consigo.',
-        'Se eliminaron los textos de sala. Todo lo que el visitante necesita está en el catálogo, compuesto en un cuerpo lo bastante grande para leerse con el brazo extendido y poca luz, con un plano plegado que hace las veces de mapa.',
-        'La muestra se mantuvo once semanas y viajó a dos ciudades más con el diseño intacto.'
+        'Una vivienda auxiliar en la que la cubierta hace el trabajo ambiental. El gran alero de la fachada sur está ajustado a la profundidad exacta que protege el acristalamiento en el solsticio de verano y deja que el sol bajo de invierno alcance el muro del fondo: ambas condiciones se dibujaron como estudios de alzado emparejados en lugar de darse por supuestas.',
+        'La planta sitúa la esquina acristalada en la zona de estar, y reduce las puertas de acceso y una ventana perforada a medida que el alzado se aparta del sol. El revestimiento horizontal pasa de una franja inferior clara a otra superior más cálida, evitando que el pequeño volumen se lea como un cobertizo.',
+        'Desarrollado a partir de bocetos de volumetría y una maqueta de estudio fotografiada desde todas sus caras y desde el aire, y resuelto después como planta, estudios de alzado en los solsticios, una caja de sección y vistas interiores de la cocina y el salón.'
       ]
     },
-    year: '2022',
-    discipline: 'spatial',
-    tools: ['Cinema 4D', 'InDesign', 'AutoCAD'],
-    featured: false,
-    cover: null,
-    images: [],
-    monogram: 'SN'
+    year: '2024',
+    discipline: 'residential',
+    tools: ['Revit', 'Enscape', 'Physical model'],
+    featured: true,
+    cover: '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20Exterior%20-%20South.png',
+    images: [
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20NE%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20NW%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20Roof%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20South%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20SW%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Photo%20West%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Brown%20-%20Project1A%20-%20Model%20Phase%201%20-%20Sketches%20-%2009-15-24.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Floor%20Plan_Passive%20Solar%20ADU.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20Exterior%20-%20North%20West.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20Exterior%20View.jpg',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20Exterior%20View.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20Section%20Box.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20View%20Kitchen.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/3D%20View%20Living%20Room.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/Summer%20Solstice_South%20Elevation.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/Summer%20Solstice_West%20Elevation.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/Winter%20Solstice_South%20Elevation.png',
+      '/portfolio/Passive%20Solar%20ADU/Renderings/Winter%20Solstice_West%20Elevation.png'
+    ],
+    monogram: 'PS'
+  },
+  {
+    slug: 'rethink-south-park',
+    title: {
+      en: 'Rethink South Park',
+      es: 'Repensar South Park'
+    },
+    client: {
+      en: 'South Park, San Francisco',
+      es: 'South Park, San Francisco'
+    },
+    role: {
+      en: 'Urban & Landscape Design',
+      es: 'Diseño Urbano y Paisajístico'
+    },
+    summary: {
+      en: 'A proposal for San Francisco\'s oval park: café, water, play and an aquaponic system.',
+      es: 'Una propuesta para el parque ovalado de San Francisco: café, agua, juego y un sistema acuapónico.'
+    },
+    body: {
+      en: [
+        'South Park is the narrow oval held between Second, Third, Bryant and Brannan — a green room in the middle of a dense block that most people cross rather than stay in. The proposal keeps the oval and reprogrammes what happens along its length.',
+        'Four elements are threaded down the axis at 1" = 100\': a café at the centre, water features either side of it, local art as punctuation, and playground and outdoor activity zones at the ends, so the park has a reason to be occupied at different hours by different people. An aquaponic system is folded in as a working, visible piece of infrastructure rather than a display.',
+        'The site was studied first as it stands — aerial and Google Earth views, existing photographs from the south, west and north-west — then tested through a physical site model and a run of hand-drawn serial views taken at eye level along the walk.'
+      ],
+      es: [
+        'South Park es el estrecho óvalo contenido entre las calles Second, Third, Bryant y Brannan: una sala verde en medio de una manzana densa que la mayoría de la gente atraviesa en lugar de habitar. La propuesta conserva el óvalo y reprograma lo que ocurre a lo largo de él.',
+        'Cuatro elementos se enhebran en su eje a escala 1" = 100\': un café en el centro, láminas de agua a ambos lados, arte local como puntuación, y zonas de juego y actividad al aire libre en los extremos, de modo que el parque tenga motivos para ocuparse a distintas horas por distintas personas. Un sistema acuapónico se incorpora como infraestructura visible y en funcionamiento, no como exhibición.',
+        'El emplazamiento se estudió primero tal como está —vistas aéreas y de Google Earth, fotografías existentes desde el sur, el oeste y el noroeste— y después se ensayó mediante una maqueta de sitio y una serie de vistas seriadas dibujadas a mano a la altura de la vista a lo largo del recorrido.'
+      ]
+    },
+    year: '2023',
+    discipline: 'urban',
+    tools: ['Physical model', 'Hand drawing', 'Site analysis'],
+    featured: true,
+    cover: '/portfolio/South%20Park/Restaurant%20view.png',
+    images: [
+      '/portfolio/South%20Park/3D%20Google%20Earth.png',
+      '/portfolio/South%20Park/Aerial%20View.jpg',
+      '/portfolio/South%20Park/Aquaponic%20Systems.png',
+      '/portfolio/South%20Park/Cover.png',
+      '/portfolio/South%20Park/Existing%20View%20South%20Park.png',
+      '/portfolio/South%20Park/Golden%20G.jpg',
+      '/portfolio/South%20Park/North%20West.jpg',
+      '/portfolio/South%20Park/Option%201.jpg',
+      '/portfolio/South%20Park/Playground.jpg',
+      '/portfolio/South%20Park/Proposed%20site.png',
+      '/portfolio/South%20Park/Serial%20view%203.png',
+      '/portfolio/South%20Park/Site%20Plan%20Base_1.jpg',
+      '/portfolio/South%20Park/Site.jpg',
+      '/portfolio/South%20Park/South%20View.jpg',
+      '/portfolio/South%20Park/South%20West%20View.jpg',
+      '/portfolio/South%20Park/South-Park%20Existing.jpg',
+      '/portfolio/South%20Park/West%20View.jpg'
+    ],
+    monogram: 'SP'
+  },
+  {
+    slug: 'surf-house-adu',
+    title: {
+      en: 'Surf House ADU',
+      es: 'ADU Surf House'
+    },
+    client: {
+      en: 'Studio project',
+      es: 'Proyecto de taller'
+    },
+    role: {
+      en: 'Architectural Design',
+      es: 'Diseño Arquitectónico'
+    },
+    summary: {
+      en: 'A clifftop accessory dwelling turned entirely toward the break below.',
+      es: 'Una vivienda auxiliar sobre el acantilado, volcada por completo hacia la rompiente.'
+    },
+    body: {
+      en: [
+        'A small accessory dwelling unit set on the edge of a coastal bluff, planned around a single question: how much of the day can be spent outdoors. The answer is a deck that is nearly the footprint of the house again, stepping down to grade and holding a plunge pool, an outdoor shower and a rack for boards.',
+        'A mono-pitch roof lifts toward the water, so the tall glazed wall faces the break and the low side takes the weather. Timber cladding runs unbroken around the volume; the interior is a single room with a compact service wall behind.',
+        'Documented as a coastal set: floor plans, an elevation, a long section, and exterior perspectives at midday and after dark.'
+      ],
+      es: [
+        'Una pequeña vivienda auxiliar situada al borde de un acantilado costero, planteada a partir de una sola pregunta: cuánto del día puede pasarse al aire libre. La respuesta es una terraza casi tan grande como la propia casa, que desciende hasta el terreno y aloja una piscina, una ducha exterior y un soporte para tablas.',
+        'Una cubierta a un agua se eleva hacia el mar, de modo que el gran paño acristalado mira a la rompiente y el lado bajo recibe el temporal. El revestimiento de madera recorre el volumen sin interrupción; el interior es una única estancia con un muro técnico compacto al fondo.',
+        'Documentado como un conjunto costero: plantas, un alzado, una sección longitudinal y perspectivas exteriores a mediodía y tras el anochecer.'
+      ]
+    },
+    year: '2024',
+    discipline: 'residential',
+    tools: ['3D rendering', 'Hand drafting'],
+    featured: true,
+    cover: '/portfolio/Surf%20House%20ADU/Exterior%20Perspective%20-%20Night%20Time.jpg',
+    images: [
+      '/portfolio/Surf%20House%20ADU/B%26W%20Floor%20Plan.jpg',
+      '/portfolio/Surf%20House%20ADU/Cover%20page.png',
+      '/portfolio/Surf%20House%20ADU/Elevation%2002.jpg',
+      '/portfolio/Surf%20House%20ADU/Exterior%20Perspective%20-%20Daytime.jpg',
+      '/portfolio/Surf%20House%20ADU/Floor%20plan%2002.jpg',
+      '/portfolio/Surf%20House%20ADU/Section.jpg'
+    ],
+    monogram: 'SH'
   }
 ];
 

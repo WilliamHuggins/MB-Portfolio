@@ -1,40 +1,30 @@
-import { cp, access } from 'node:fs/promises';
 import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 
 const root = __dirname;
 
 /**
- * Ship `portfolio/` — Mariela's raw project assets — alongside the built site.
- * Vite serves it straight from the project root in dev; this copies it into
- * `dist/` for production so `/portfolio/<project>/<image>` keeps resolving.
+ * Ship `portfolio/` — Mariela's project assets — alongside the built site.
+ * Vite serves the folder straight from the project root in dev; for production
+ * the images are resized and re-encoded into `dist/portfolio/` at the same
+ * relative paths, so `/portfolio/<project>/<image>` keeps resolving while the
+ * originals stay untouched in the repository.
  */
-function copyPortfolioAssets(): Plugin {
+function portfolioAssets(): Plugin {
   return {
-    name: 'copy-portfolio-assets',
+    name: 'portfolio-assets',
     apply: 'build',
     async closeBundle() {
-      const from = path.resolve(root, 'portfolio');
-      try {
-        await access(from);
-      } catch {
-        this.warn('No portfolio/ folder found — skipping asset copy.');
-        return;
-      }
-      await cp(from, path.resolve(root, 'dist/portfolio'), {
-        recursive: true,
-        filter: (src) => {
-          const rel = path.relative(from, src);
-          if (!rel) return true;
-          return !/(^|[\\/])[._]/.test(rel) && !src.endsWith('.md');
-        }
-      });
+      const { optimizePortfolio } = await import('./scripts/optimize-images.mjs');
+      await optimizePortfolio(path.resolve(root, 'dist/portfolio'), (msg: string) =>
+        this.info(msg)
+      );
     }
   };
 }
 
 export default defineConfig({
-  plugins: [copyPortfolioAssets()],
+  plugins: [portfolioAssets()],
   resolve: {
     alias: { '@': path.resolve(root, '.') }
   },

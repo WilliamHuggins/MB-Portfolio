@@ -1,0 +1,31 @@
+{
+  "slug": "mixed-use-coffee-shop",
+  "title": {
+    "en": "Mixed-Use Building — Coffee Shop",
+    "es": "Edificio de Uso Mixto — Cafetería"
+  },
+  "client": { "en": "Studio project", "es": "Proyecto de taller" },
+  "role": { "en": "Interior Design", "es": "Diseño de Interiores" },
+  "summary": {
+    "en": "A ground-floor café fitted into a mixed-use building, planned around one long counter.",
+    "es": "Una cafetería en planta baja dentro de un edificio de uso mixto, organizada en torno a una única barra."
+  },
+  "body": {
+    "en": [
+      "The ground floor of a mixed-use building, fitted out as a café for a specialty coffee brand. A single long counter in poured concrete runs most of the depth of the tenancy, separating the service side from the room and giving the queue somewhere to go without crossing the seated area.",
+      "Seating is deliberately mixed: a communal table at the centre, small round two-tops along the glazing, and a bar shelf at the counter, so the same footprint works for a morning rush and an afternoon of laptops. Timber millwork warms a palette otherwise held to concrete, plaster and glass.",
+      "Presented as a colour-coded floor plan, a conceptual plan, three interior elevations and a set of interior and exterior renderings."
+    ],
+    "es": [
+      "La planta baja de un edificio de uso mixto, acondicionada como cafetería para una marca de café de especialidad. Una única barra larga de hormigón visto recorre casi todo el fondo del local, separa la zona de servicio de la sala y da a la cola un lugar donde esperar sin invadir el área de mesas.",
+      "Los asientos se mezclan a propósito: una mesa comunitaria en el centro, pequeñas mesas redondas junto al acristalamiento y una repisa alta en la barra, de modo que el mismo local sirve para la hora punta de la mañana y para una tarde de portátiles. La carpintería de madera templa una paleta por lo demás limitada a hormigón, yeso y vidrio.",
+      "Presentado como planta codificada por colores, planta conceptual, tres alzados interiores y un conjunto de renders interiores y exteriores."
+    ]
+  },
+  "year": "2024",
+  "discipline": "commercial",
+  "tools": ["3D rendering", "Hand drafting"],
+  "featured": true,
+  "cover": "3D View 1 - Blue Bottle Coffee.jpg",
+  "monogram": "CS"
+}

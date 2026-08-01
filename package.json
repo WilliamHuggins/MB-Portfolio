@@ -10,10 +10,12 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "sync:portfolio": "node scripts/sync-portfolio.mjs"
+    "sync:portfolio": "node scripts/sync-portfolio.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "sharp": "^0.34.4",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

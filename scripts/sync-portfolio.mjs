@@ -29,7 +29,7 @@ const PORTFOLIO_DIR = join(ROOT, 'portfolio');
 const DATA_FILE = join(ROOT, 'assets', 'js', 'gallery-data.js');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.gif', '.svg']);
-const DISCIPLINES = ['branding', 'editorial', 'digital', 'packaging', 'spatial'];
+const DISCIPLINES = ['residential', 'commercial', 'interiors', 'urban'];
 
 /* ------------------------------------------------------------------ utils */
 
@@ -58,8 +58,12 @@ const monogramFor = (title) => {
   return letters.toUpperCase();
 };
 
-/** Web path for a file on disk, e.g. /portfolio/01-maison/cover.jpg */
-const webPath = (absolute) => '/' + relative(ROOT, absolute).split(/[\\/]/).join('/');
+/**
+ * Web path for a file on disk, e.g. /portfolio/Surf%20House%20ADU/Section.jpg
+ * Each segment is encoded so spaces, `#` and `&` in real filenames survive.
+ */
+const webPath = (absolute) =>
+  '/' + relative(ROOT, absolute).split(/[\\/]/).map(encodeURIComponent).join('/');
 
 /** JS object literal with stable, readable formatting. */
 function serialize(value, indent = 2) {
@@ -84,15 +88,33 @@ function serialize(value, indent = 2) {
 
 /* ------------------------------------------------------------------- scan */
 
+/** Every image inside a project folder, including sub-folders, in sort order. */
+async function collectImages(dir, prefix = '') {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+  const dirs = [];
+
+  for (const entry of entries) {
+    if (entry.name.startsWith('.') || entry.name.startsWith('_')) continue;
+    if (entry.isDirectory()) dirs.push(entry.name);
+    else if (IMAGE_EXT.has(extname(entry.name).toLowerCase())) files.push(prefix + entry.name);
+  }
+
+  const byName = (a, b) => a.localeCompare(b, 'en', { numeric: true });
+  files.sort(byName);
+  dirs.sort(byName);
+
+  // Sub-folders follow the loose images, keeping series like `Renderings/` together.
+  for (const sub of dirs) {
+    files.push(...await collectImages(join(dir, sub), `${prefix}${sub}/`));
+  }
+  return files;
+}
+
 async function readFolder(dir) {
   const name = basename(dir);
   const slug = slugify(name);
-  const entries = await readdir(dir, { withFileTypes: true });
-
-  const images = entries
-    .filter((e) => e.isFile() && IMAGE_EXT.has(extname(e.name).toLowerCase()))
-    .map((e) => e.name)
-    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+  const images = await collectImages(dir);
 
   let meta = {};
   const metaPath = join(dir, 'project.json');
@@ -106,7 +128,11 @@ async function readFolder(dir) {
 
   const coverName = meta.cover && images.includes(meta.cover)
     ? meta.cover
-    : images.find((f) => /^cover\./i.test(f)) || images[0] || null;
+    : images.find((f) => /(^|\/)cover[.\s]/i.test(f)) || images[0] || null;
+
+  if (meta.cover && !images.includes(meta.cover)) {
+    console.warn(`  ! ${name}: cover "${meta.cover}" not found — using ${coverName ?? 'a placeholder'}`);
+  }
 
   const gallery = images.filter((f) => f !== coverName);
 
@@ -146,10 +172,10 @@ function merge(folder, existing) {
   const fallbackTitle = titleize(folder.name);
   const title = bilingual(meta.title, existing?.title || { en: fallbackTitle, es: fallbackTitle });
 
-  let discipline = meta.discipline || existing?.discipline || 'branding';
+  let discipline = meta.discipline || existing?.discipline || 'residential';
   if (!DISCIPLINES.includes(discipline)) {
-    console.warn(`  ! ${folder.name}: unknown discipline "${discipline}" — falling back to "branding"`);
-    discipline = 'branding';
+    console.warn(`  ! ${folder.name}: unknown discipline "${discipline}" — falling back to "residential"`);
+    discipline = 'residential';
   }
 
   return {
