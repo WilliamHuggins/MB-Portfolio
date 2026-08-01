@@ -1,0 +1,31 @@
+{
+  "slug": "mid-century-modern-remodel",
+  "title": {
+    "en": "Mid-Century Modern House Remodel",
+    "es": "Reforma de Casa Mid-Century Modern"
+  },
+  "client": { "en": "Private residence", "es": "Residencia privada" },
+  "role": { "en": "Architectural Design", "es": "Diseño Arquitectónico" },
+  "summary": {
+    "en": "A whole-house remodel that keeps the low horizontal roofline and opens the ground floor.",
+    "es": "Una reforma integral que conserva la línea de cubierta horizontal y abre la planta baja."
+  },
+  "body": {
+    "en": [
+      "A remodel of a mid-century house that treats the original horizontal roofline as the thing worth protecting. The extended eave is kept and pushed further, so the added upper storey reads as a shaded band rather than a second house stacked on the first.",
+      "The ground floor is opened to a full-width glazed elevation onto the terrace, with a covered balcony above it. Warm accent columns break the white stucco at regular intervals, and a dark upper cladding lets the added volume recede.",
+      "Studied as exterior renderings from two approaches, with interior options developed for the kitchen and the main suite."
+    ],
+    "es": [
+      "La reforma de una casa mid-century que trata la línea horizontal original de la cubierta como lo que merece protegerse. El alero se conserva y se prolonga, de modo que la planta superior añadida se lee como una franja en sombra y no como una segunda casa apilada sobre la primera.",
+      "La planta baja se abre con un alzado acristalado de toda la anchura hacia la terraza, con un balcón cubierto encima. Unos pilares de tono cálido interrumpen el estuco blanco a intervalos regulares, y un revestimiento oscuro en la planta alta hace retroceder el volumen añadido.",
+      "Estudiado mediante renders exteriores desde dos aproximaciones, con opciones interiores desarrolladas para la cocina y el dormitorio principal."
+    ]
+  },
+  "year": "2024",
+  "discipline": "residential",
+  "tools": ["Revit", "Enscape"],
+  "featured": false,
+  "cover": "3D Exterior View Rendering_Enscape Software.png",
+  "monogram": "MC"
+}

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /styleguide/
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://marielabrown.com/sitemap.xml

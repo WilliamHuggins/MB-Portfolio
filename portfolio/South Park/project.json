@@ -1,0 +1,41 @@
+{
+  "slug": "rethink-south-park",
+  "title": {
+    "en": "Rethink South Park",
+    "es": "Repensar South Park"
+  },
+  "client": {
+    "en": "South Park, San Francisco",
+    "es": "South Park, San Francisco"
+  },
+  "role": {
+    "en": "Urban & Landscape Design",
+    "es": "Diseño Urbano y Paisajístico"
+  },
+  "summary": {
+    "en": "A proposal for San Francisco's oval park: café, water, play and an aquaponic system.",
+    "es": "Una propuesta para el parque ovalado de San Francisco: café, agua, juego y un sistema acuapónico."
+  },
+  "body": {
+    "en": [
+      "South Park is the narrow oval held between Second, Third, Bryant and Brannan — a green room in the middle of a dense block that most people cross rather than stay in. The proposal keeps the oval and reprogrammes what happens along its length.",
+      "Four elements are threaded down the axis at 1\" = 100': a café at the centre, water features either side of it, local art as punctuation, and playground and outdoor activity zones at the ends, so the park has a reason to be occupied at different hours by different people. An aquaponic system is folded in as a working, visible piece of infrastructure rather than a display.",
+      "The site was studied first as it stands — aerial and Google Earth views, existing photographs from the south, west and north-west — then tested through a physical site model and a run of hand-drawn serial views taken at eye level along the walk."
+    ],
+    "es": [
+      "South Park es el estrecho óvalo contenido entre las calles Second, Third, Bryant y Brannan: una sala verde en medio de una manzana densa que la mayoría de la gente atraviesa en lugar de habitar. La propuesta conserva el óvalo y reprograma lo que ocurre a lo largo de él.",
+      "Cuatro elementos se enhebran en su eje a escala 1\" = 100': un café en el centro, láminas de agua a ambos lados, arte local como puntuación, y zonas de juego y actividad al aire libre en los extremos, de modo que el parque tenga motivos para ocuparse a distintas horas por distintas personas. Un sistema acuapónico se incorpora como infraestructura visible y en funcionamiento, no como exhibición.",
+      "El emplazamiento se estudió primero tal como está —vistas aéreas y de Google Earth, fotografías existentes desde el sur, el oeste y el noroeste— y después se ensayó mediante una maqueta de sitio y una serie de vistas seriadas dibujadas a mano a la altura de la vista a lo largo del recorrido."
+    ]
+  },
+  "year": "2023",
+  "discipline": "urban",
+  "tools": [
+    "Physical model",
+    "Hand drawing",
+    "Site analysis"
+  ],
+  "featured": true,
+  "cover": "Restaurant view.png",
+  "monogram": "SP"
+}

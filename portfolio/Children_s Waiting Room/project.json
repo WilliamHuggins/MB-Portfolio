@@ -1,0 +1,31 @@
+{
+  "slug": "childrens-waiting-room",
+  "title": {
+    "en": "Children's Waiting Room",
+    "es": "Sala de Espera Infantil"
+  },
+  "client": { "en": "Academic studio project", "es": "Proyecto académico de taller" },
+  "role": { "en": "Interior Architecture", "es": "Arquitectura de Interiores" },
+  "summary": {
+    "en": "A marine-themed waiting room where the whole room is shaped like a breaking wave.",
+    "es": "Una sala de espera de tema marino donde el propio espacio toma la forma de una ola rompiendo."
+  },
+  "body": {
+    "en": [
+      "A waiting room for children takes the ocean as its organising idea, and then commits to it completely. The enclosing shell is a single curved form modelled on a breaking wave, with openings cut as wave crests rather than rectangles, so the room reads as one gesture from the pavement to the reception desk.",
+      "Inside, a band of blue and sand runs across floor and wall as a continuous current, drawing a child from the entrance past the sensory table and the marine life tank toward the seating. A curved reception desk, developed through its own sequence of sketches and study models, sits at the head of that current.",
+      "The project was worked out in parallel across media: space programming and floor plans, an isometric, section and serial views, watercolour perspectives to test light and colour, and a series of white paper models photographed from entrance, reception, side and above."
+    ],
+    "es": [
+      "Una sala de espera infantil toma el océano como idea organizadora y se compromete con ella por completo. La envolvente es una única forma curva modelada a partir de una ola rompiendo, con aberturas recortadas como crestas en lugar de rectángulos, de modo que la sala se lee como un solo gesto desde la acera hasta el mostrador de recepción.",
+      "En el interior, una franja azul y arena recorre suelo y muro como una corriente continua, guiando al niño desde la entrada, pasando por la mesa sensorial y el acuario, hasta la zona de espera. Un mostrador curvo, desarrollado con su propia secuencia de bocetos y maquetas de estudio, se sitúa al inicio de esa corriente.",
+      "El proyecto se resolvió en paralelo en distintos medios: programación del espacio y plantas, una isometría, sección y vistas seriadas, perspectivas a la acuarela para ensayar luz y color, y una serie de maquetas de papel blanco fotografiadas desde la entrada, la recepción, el lateral y el aire."
+    ]
+  },
+  "year": "2023",
+  "discipline": "interiors",
+  "tools": ["Physical model", "Watercolour", "Hand drafting"],
+  "featured": true,
+  "cover": "Model Reception View.jpg",
+  "monogram": "CW"
+}
