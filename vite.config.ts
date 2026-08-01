@@ -1,36 +1,59 @@
-import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import { cp, access } from 'node:fs/promises';
+import path from 'node:path';
+import { defineConfig, type Plugin } from 'vite';
 
-export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, '.', '');
+const root = __dirname;
+
+/**
+ * Ship `portfolio/` — Mariela's raw project assets — alongside the built site.
+ * Vite serves it straight from the project root in dev; this copies it into
+ * `dist/` for production so `/portfolio/<project>/<image>` keeps resolving.
+ */
+function copyPortfolioAssets(): Plugin {
   return {
-    plugins: [react(), tailwindcss()],
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-    },
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '.'),
-      },
-    },
-    build: {
-      rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, 'index.html'),
-          bio: path.resolve(__dirname, 'bio/index.html'),
-          gallery: path.resolve(__dirname, 'gallery/index.html'),
-          contact: path.resolve(__dirname, 'contact/index.html'),
-          styleguide: path.resolve(__dirname, 'styleguide/index.html'),
-          project: path.resolve(__dirname, 'project/index.html')
-        }
+    name: 'copy-portfolio-assets',
+    apply: 'build',
+    async closeBundle() {
+      const from = path.resolve(root, 'portfolio');
+      try {
+        await access(from);
+      } catch {
+        this.warn('No portfolio/ folder found — skipping asset copy.');
+        return;
       }
-    },
-    server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
-      hmr: process.env.DISABLE_HMR !== 'true',
-    },
+      await cp(from, path.resolve(root, 'dist/portfolio'), {
+        recursive: true,
+        filter: (src) => {
+          const rel = path.relative(from, src);
+          if (!rel) return true;
+          return !/(^|[\\/])[._]/.test(rel) && !src.endsWith('.md');
+        }
+      });
+    }
   };
+}
+
+export default defineConfig({
+  plugins: [copyPortfolioAssets()],
+  resolve: {
+    alias: { '@': path.resolve(root, '.') }
+  },
+  build: {
+    target: 'es2020',
+    cssMinify: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(root, 'index.html'),
+        bio: path.resolve(root, 'bio/index.html'),
+        gallery: path.resolve(root, 'gallery/index.html'),
+        contact: path.resolve(root, 'contact/index.html'),
+        project: path.resolve(root, 'project/index.html'),
+        styleguide: path.resolve(root, 'styleguide/index.html')
+      }
+    }
+  },
+  server: {
+    // HMR is disabled in AI Studio via the DISABLE_HMR env var.
+    hmr: process.env.DISABLE_HMR !== 'true'
+  }
 });
